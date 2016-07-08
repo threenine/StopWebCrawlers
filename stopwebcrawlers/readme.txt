@@ -27,9 +27,7 @@ The simplest and easiet way to stop bad web crawlers, bots  and referrer spammer
 </p>
 <ul>
 <li>Stop Web scrapers from stealing your content</li> 
-<li>Over 1000 Bad Bots Included!</li>
-<li>Ability to add more</li>
-<li>Easy to manage the list</li>
+<li>Over 100 Web Crawlwers Included!</li>
 <li>More features to come</li>
 
 
