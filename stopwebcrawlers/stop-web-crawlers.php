@@ -67,6 +67,8 @@ class Stop_Web_Crawlers {
 	}
 
 	public function swc_execute() {
+		
+		global $wpdb;
 		$referer = isset( $_SERVER['HTTP_REFERER'] ) ? $_SERVER['HTTP_REFERER'] : false;
 
 		if ( empty( $referer ) ) {
@@ -74,9 +76,6 @@ class Stop_Web_Crawlers {
 		}
 
 		$referer = strtolower($referer);
-
-			global $wpdb;
-		
 		$table_name = $wpdb->prefix . "swc_blacklist";
 		
 		$sql = "SELECT boturl FROM " . $table_name . " WHERE botstate = 'Enabled'";
@@ -90,17 +89,7 @@ class Stop_Web_Crawlers {
 		}
 	}
 	
-	private function build_bot_array(){
 	
-		global $wpdb;
-		
-		$table_name = $wpdb->prefix . "swc_blacklist";
-		
-		$sql = "SELECT boturl FROM " . $table_name . " WHERE botstate = 'Enabled'";
-		$bot_array = $wpdb->get_results($sql) or die(mysql_error());
-				
-		return $bot_array;
-	}
 }
 	function swc_render_list_page() {
 		$test_list_table = new swc_List_Table();
