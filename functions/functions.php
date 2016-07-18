@@ -82,6 +82,21 @@ function swc_populate_db($wp_swc_blacklist)
 		if (count($results9) > 0 or empty($botnickname))
 			continue;
 
+<<<<<<< HEAD
+			/*
+			 $r = $wpdb->insert($table_name, array(
+			 'botnickname' => $botnickname,
+			 'botname' => $a['botname'],
+			 'boturl' => $a['boturl'],
+			 'botstate' => "Enabled",
+			 ), array(
+			 '%s',
+			 '%s',
+			 '%s',
+			 '%s'));
+			 */
+=======
+>>>>>>> 94079315f100aed1bcffcacb31515052ac704fef
 
 			$query = "INSERT INTO ".$table_name.
 			" (botnickname, botname, boturl, botstate)
