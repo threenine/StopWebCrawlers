@@ -77,14 +77,22 @@ class swc_List_Table extends WP_List_Table {
 		// Build desactivate row action.
 		$delete_query_args = array(
 				'page'   => $page,
+<<<<<<< HEAD
 				'action' => 'desactivate',
+=======
+				'action' => 'Disable',
+>>>>>>> 94079315f100aed1bcffcacb31515052ac704fef
 				'bot'  => $item['id'],
 		);
 
 		$actions['desactivate'] = sprintf(
 				'<a href="%1$s">%2$s</a>',
 				esc_url( wp_nonce_url( admin_url( add_query_arg( $delete_query_args ) ), 'deletemovie_' . $item['ID'] ) ),
+<<<<<<< HEAD
 				_x( 'Desactivate', 'List table row action', 'stopwebcrawlers' )
+=======
+				_x( 'Disable', 'List table row action', 'stopwebcrawlers' )
+>>>>>>> 94079315f100aed1bcffcacb31515052ac704fef
 				);
 
 
@@ -100,8 +108,13 @@ class swc_List_Table extends WP_List_Table {
 
 	protected function get_bulk_actions() {
 		$actions = array(
+<<<<<<< HEAD
 				'activate' => _x( 'Activate', 'List table bulk action', 'stopwebcrawlers' ),
 				'desactivate' => _x( 'Desactivate', 'List table bulk action', 'stopwebcrawlers' ),
+=======
+				'Enable' => _x( 'Enable', 'List table bulk action', 'stopwebcrawlers' ),
+				'Disable' => _x( 'Disable', 'List table bulk action', 'stopwebcrawlers' ),
+>>>>>>> 94079315f100aed1bcffcacb31515052ac704fef
 
 		);
 
@@ -112,7 +125,11 @@ class swc_List_Table extends WP_List_Table {
 	protected function process_bulk_action() {
 		// Detect when a bulk action is being triggered.
 		global $wpdb;
+<<<<<<< HEAD
 		if ( 'activate' === $this->current_action() ) {
+=======
+		if ( 'Enable' === $this->current_action() ) {
+>>>>>>> 94079315f100aed1bcffcacb31515052ac704fef
 
 			if(isset($_GET['bot']))
 			{
@@ -149,7 +166,11 @@ class swc_List_Table extends WP_List_Table {
 		}
 
 
+<<<<<<< HEAD
 		if ( 'desactivate' === $this->current_action() ) {
+=======
+		if ( 'Disable' === $this->current_action() ) {
+>>>>>>> 94079315f100aed1bcffcacb31515052ac704fef
 
 			if(isset($_GET['bot']))
 			{
