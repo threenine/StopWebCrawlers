@@ -13,15 +13,12 @@ wp-content/plugins/hello.php
 /.htaccess
 /license.txt
 /readme.html
-<<<<<<< HEAD
-README.md
 /sitemap.xml
 /sitemap.xml.gz
-=======
+
 /sitemap.xml
 /sitemap.xml.gz
-svn
+
 .project
 *.settings
->>>>>>> 94079315f100aed1bcffcacb31515052ac704fef
 
