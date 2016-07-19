@@ -77,14 +77,14 @@ class swc_List_Table extends WP_List_Table {
 		// Build desactivate row action.
 		$delete_query_args = array(
 				'page'   => $page,
-				'action' => 'desactivate',
+				'action' => 'Disable',
 				'bot'  => $item['id'],
 		);
 
 		$actions['desactivate'] = sprintf(
 				'<a href="%1$s">%2$s</a>',
 				esc_url( wp_nonce_url( admin_url( add_query_arg( $delete_query_args ) ), 'deletemovie_' . $item['ID'] ) ),
-				_x( 'Desactivate', 'List table row action', 'stopwebcrawlers' )
+				_x( 'Disable', 'List table row action', 'stopwebcrawlers' )
 				);
 
 
@@ -100,8 +100,8 @@ class swc_List_Table extends WP_List_Table {
 
 	protected function get_bulk_actions() {
 		$actions = array(
-				'activate' => _x( 'Activate', 'List table bulk action', 'stopwebcrawlers' ),
-				'desactivate' => _x( 'Desactivate', 'List table bulk action', 'stopwebcrawlers' ),
+				'Enable' => _x( 'Enable', 'List table bulk action', 'stopwebcrawlers' ),
+				'Disable' => _x( 'Disable', 'List table bulk action', 'stopwebcrawlers' ),
 
 		);
 
@@ -112,7 +112,7 @@ class swc_List_Table extends WP_List_Table {
 	protected function process_bulk_action() {
 		// Detect when a bulk action is being triggered.
 		global $wpdb;
-		if ( 'activate' === $this->current_action() ) {
+		if ( 'Enable' === $this->current_action() ) {
 
 			if(isset($_GET['bot']))
 			{
@@ -149,7 +149,7 @@ class swc_List_Table extends WP_List_Table {
 		}
 
 
-		if ( 'desactivate' === $this->current_action() ) {
+		if ( 'Disable' === $this->current_action() ) {
 
 			if(isset($_GET['bot']))
 			{
