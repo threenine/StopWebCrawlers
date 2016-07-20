@@ -5,7 +5,7 @@ License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: block bot, block bots, block bad bots, stop bot, stop bots, stop bad bots, stop web crawlers, web crawlers
 Tested up to: 4.5
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 
 The simplest and easiet way to stop bad web crawlers, bots  and referrer spammers from targeting your wordpress website
 
