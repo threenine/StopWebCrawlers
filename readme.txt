@@ -12,10 +12,11 @@ Tested up to:      4.5.3
 Stable tag:        1.0.5
 Version:           1.0.5
 
+The simplest and easiet way to stop bad web crawlers, bots  and referrer spammers from targeting your wordpress website
+
 
 == Description ==
 
-The simplest and easiet way to stop bad web crawlers, bots  and referrer spammers from targeting your wordpress website
 
  Stop Web Crawlers has been developed to block referrer spam attacks on your WordPress website.  
  

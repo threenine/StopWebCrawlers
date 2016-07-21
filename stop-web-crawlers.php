@@ -36,7 +36,7 @@ function swc_start() {
 require_once (SWCPATH . "settings/load-plugin.php");
 require_once (SWCPATH . "settings/options/plugin_options_tabbed.php");
 require_once (SWCPATH . "functions/functions.php");
-require_once(ABSPATH . 'wp-includes/pluggable.php');
+require_once (ABSPATH . 'wp-includes/pluggable.php');
 
 if ( ! class_exists( 'WP_List_Table' ) ) {
 	require_once ABSPATH . 'wp-admin/includes/class-wp-list-table.php';
@@ -68,6 +68,11 @@ class Stop_Web_Crawlers {
 
 	public function swc_execute() {
 		
+		// Simply exit if logged or in admin area
+		if ( is_user_logged_in() || is_admin() ) {
+			return;
+		}
+		
 		global $wpdb;
 		$referer = isset( $_SERVER['HTTP_REFERER'] ) ? $_SERVER['HTTP_REFERER'] : false;
 
@@ -92,8 +97,8 @@ class Stop_Web_Crawlers {
 	
 }
 	function swc_render_list_page() {
-		$test_list_table = new swc_List_Table();
-		$test_list_table->prepare_items();
+		$crawler_list_table = new swc_List_Table();
+		$crawler_list_table->prepare_items();
 		require dirname( __FILE__ ) . '/includes/list-tables/page.php';
 	}
 	register_activation_hook( __FILE__, 'swc_plugin_activated');
