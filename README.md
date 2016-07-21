@@ -25,7 +25,7 @@ of synchronizing updates between the two repositories.
 		
 		$ git clone https://github.com/threenine/StopWebCrawlers.git
 
- 2. Change into the Directory
+2. Change into the Directory
  
  
  		$ cd StopWebCrawlers
@@ -41,3 +41,32 @@ of synchronizing updates between the two repositories.
 		$ git svn fetch  --log-window-size 10000    #CAUTION THIS LINE TAKES A LONG TIME TO COMPLETE
 		
 		$ git reset --hard origin/trunk
+		
+4. Merge changes from Subversion to GitHub
+
+		$ git checkout svnsync
+		
+		$ git svn rebase
+		
+		$ git checkout master
+		
+		$ git merge svnsync
+		
+		$ git push origin master
+		
+5. Merge changes from GitHub and publish to SubVersion
+
+		$ git checkout master
+		
+		$ git pull origin master
+		
+		$ git checkout svnsync
+		
+		$ git svn rebase
+		
+		$ git merge --no-ff master
+		
+		$ git commit
+		
+		$ git svn dcommit
+		
