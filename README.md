@@ -35,6 +35,9 @@ of synchronizing updates between the two repositories.
 	
 		
 	$ git branch --no-track svnsync
+	
 	$ git svn init -s https://plugins.svn.wordpress.org/stop-web-crawlers/ --prefix=origin/
+	
 	$ git svn fetch  --log-window-size 10000    #CAUTION THIS LINE TAKES A LONG TIME TO COMPLETE
+	
 	$ git reset --hard origin/trunk
