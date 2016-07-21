@@ -9,8 +9,8 @@ Author:            Gary Woodfine
 Donate link:       https://www.paypal.me/geekiam
 Requires at least: 4.5
 Tested up to:      4.5.3
-Stable tag:        1.0.4
-Version:           1.0.4
+Stable tag:        1.0.5
+Version:           1.0.5
 
 
 == Description ==
