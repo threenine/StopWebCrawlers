@@ -60,8 +60,33 @@ The additional functionality planned for this plugin for the future is also to r
 
 == Changelog ==
 
-
+	= 1.0.5 =
+	
+		Added functionality for filter not run for logged in users or admin users
+	
+	= 1.0.4 =
+	
+		Updated readme text 
+	
+	= 1.0.3 =
+		
+		Fix upgrade bug and patched HTML formatting
+	
+	= 1.0.2 =
+		
+		Bug fix from a source control merge issue
+	
+	= 1.0.1 =
+		
+		Cosmetic changes
+	
+	= 1.0.0 =
+	
+		Initial release
+		
 
 == Frequently Asked Questions ==
+
+
 
 == Donations ==
