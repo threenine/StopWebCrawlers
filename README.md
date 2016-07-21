@@ -2,5 +2,71 @@
 
 A free WordPress plugin to block referer spammers from your WordPress Blog.
 
-This plugin is also available from the WordPress.org Plugin Directory
+## Development 
+** Important : ** This is the main development branch and source code repository for the plugin. If you choose to clone or download code from this repository
+please take note that it may not necessarily supported.
+
+## Release version
+The release version of this plugin is available  from the WordPress.org Plugin Directory:
+
 [Stop Web Crawlers](https://wordpress.org/plugins/stop-web-crawlers)
+
+## Getting Started
+This pugin is hosted on the official WordPress plugin subversion directory, therefore the steps here outline the process
+of synchronizing updates between the two repositories.
+
+1. Clone the GitHub Repo 
+
+	SSH
+
+		$ git clone git@github.com:threenine/StopWebCrawlers.git
+		
+	HTTPS
+		
+		$ git clone https://github.com/threenine/StopWebCrawlers.git
+
+2. Change into the Directory
+ 
+ 
+ 		$ cd StopWebCrawlers
+ 		
+
+3. Set Up a Subversion tracking branch
+	
+			
+		$ git branch --no-track svnsync
+		
+		$ git svn init -s https://plugins.svn.wordpress.org/stop-web-crawlers/ --prefix=origin/
+		
+		$ git svn fetch  --log-window-size 10000    #CAUTION THIS LINE TAKES A LONG TIME TO COMPLETE
+		
+		$ git reset --hard origin/trunk
+		
+4. Merge changes from Subversion to GitHub
+
+		$ git checkout svnsync
+		
+		$ git svn rebase
+		
+		$ git checkout master
+		
+		$ git merge svnsync
+		
+		$ git push origin master
+		
+5. Merge changes from GitHub and publish to SubVersion
+
+		$ git checkout master
+		
+		$ git pull origin master
+		
+		$ git checkout svnsync
+		
+		$ git svn rebase
+		
+		$ git merge --no-ff master
+		
+		$ git commit
+		
+		$ git svn dcommit
+		
