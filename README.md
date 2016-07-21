@@ -33,11 +33,11 @@ of synchronizing updates between the two repositories.
 
 3. Set Up a Subversion tracking branch
 	
+			
+		$ git branch --no-track svnsync
 		
-	$ git branch --no-track svnsync
-	
-	$ git svn init -s https://plugins.svn.wordpress.org/stop-web-crawlers/ --prefix=origin/
-	
-	$ git svn fetch  --log-window-size 10000    #CAUTION THIS LINE TAKES A LONG TIME TO COMPLETE
-	
-	$ git reset --hard origin/trunk
+		$ git svn init -s https://plugins.svn.wordpress.org/stop-web-crawlers/ --prefix=origin/
+		
+		$ git svn fetch  --log-window-size 10000    #CAUTION THIS LINE TAKES A LONG TIME TO COMPLETE
+		
+		$ git reset --hard origin/trunk
