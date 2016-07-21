@@ -59,6 +59,8 @@ The additional functionality planned for this plugin for the future is also to r
 
 == Changelog ==
 
+
+
 == Frequently Asked Questions ==
 
 == Donations ==
