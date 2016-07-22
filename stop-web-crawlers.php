@@ -7,17 +7,45 @@
  Author: Three Nine Consulting
  Author URI: http://threenine.co.uk
  License: GPLv2 or later
- */
+ 
+ 
+   Copyright 2016 Three Nine Consulting (email : support@threenine.co.uk)
+	This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as 
+    published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+	This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+	without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+								
+	See the GNU General Public License for more details.
+	You should have received a copy of the GNU General Public License
+	along with this program; if not, write to the 
+	Free Software Foundation, Inc., 
+	51 Franklin St, Fifth Floor, 
+	Boston, 
+	MA 02110-1301 USA 
+
+*/
 
 
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 define('SWC', '0.2' );
-define('SWCPATH', plugin_dir_path(__file__) );
-define('SWCURL', plugin_dir_url(__file__));
+define('SWCPATH', plugin_dir_path(__FILE__) );
+define('SWCURL', plugin_dir_url(__FILE__));
 define('SWCDOMAIN', get_site_url() );
 
+require_once (SWCPATH . "settings/load-plugin.php");
+require_once (SWCPATH . "settings/options/plugin_options_tabbed.php");
+require_once (SWCPATH . "functions/functions.php");
+require_once (ABSPATH . "wp-includes/pluggable.php");
+
+
+register_activation_hook( __FILE__, 'swc_plugin_activated');
+
+add_action( 'plugins_loaded', 'swc_plugin_db_update' );
+add_action( 'plugins_loaded', 'swc_start' );
+add_filter( 'plugin_action_links_$plugin', 'swc_plugin_settings_link' );
+add_action( 'admin_menu', 'swc_add_menu_items' );
 
 // Add settings link on plugin page
 function swc_plugin_settings_link($links) {
@@ -27,16 +55,13 @@ function swc_plugin_settings_link($links) {
 }
 
 $plugin = plugin_basename(__FILE__);
-add_filter("plugin_action_links_$plugin", 'swc_plugin_settings_link' );
+
 
 function swc_start() {
 	$wp_bs_loaded = new Stop_Web_Crawlers ();
 }
 
-require_once (SWCPATH . "settings/load-plugin.php");
-require_once (SWCPATH . "settings/options/plugin_options_tabbed.php");
-require_once (SWCPATH . "functions/functions.php");
-require_once (ABSPATH . 'wp-includes/pluggable.php');
+
 
 if ( ! class_exists( 'WP_List_Table' ) ) {
 	require_once ABSPATH . 'wp-admin/includes/class-wp-list-table.php';
@@ -44,7 +69,7 @@ if ( ! class_exists( 'WP_List_Table' ) ) {
 
 require dirname( __FILE__ ) . '/includes/list-tables/class-swc-list-table.php';
 
-add_action( 'admin_menu', 'swc_add_menu_items' );
+
 
 function swc_add_menu_items() {
 	add_submenu_page(
@@ -57,7 +82,7 @@ function swc_add_menu_items() {
 }
 
 
-add_action( 'plugins_loaded', 'swc_start' );
+
 
 class Stop_Web_Crawlers {
 
@@ -101,7 +126,6 @@ class Stop_Web_Crawlers {
 		$crawler_list_table->prepare_items();
 		require dirname( __FILE__ ) . '/includes/list-tables/page.php';
 	}
-	register_activation_hook( __FILE__, 'swc_plugin_activated');
-	add_action( 'plugins_loaded', 'swc_plugin_db_update' );
+	
 
 ?>

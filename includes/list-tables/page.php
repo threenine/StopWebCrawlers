@@ -1,7 +1,7 @@
 <?php
 /**
  * WP List Table admin page view
- * Bill
+ * Gary Woodfine
  * @license   GPL-2.0+
  */
 
@@ -12,9 +12,9 @@
 		<input type="hidden" name="page" value="<?php echo $_REQUEST['page'] ?>" />
 
 
-        <?php $test_list_table->search_box('Search Nickname', 'search-table'); ?>
+        <?php $crawler_list_table->search_box('Search Nickname', 'search-table'); ?>
 
-		<?php $test_list_table->display() ?>
+		<?php $crawler_list_table->display() ?>
 	</form>
 </div>
 
