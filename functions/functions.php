@@ -1,6 +1,11 @@
 <?php
 function swc_plugin_activated()
 {
+	
+	global $wp_version;
+	if ( version_compare( $wp_version, '4.1', '<' ) ) {
+		wp_die( 'This plugin requires WordPress version 4.1 or higher.' );
+	}
 	global $wp_swc_blacklist;
 
 	require_once (SWCPATH . "functions/crawlers.php");
