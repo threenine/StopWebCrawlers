@@ -9,8 +9,8 @@ Author:            Gary Woodfine
 Donate link:       https://www.paypal.me/geekiam
 Requires at least: 4.5
 Tested up to:      4.5.3
-Stable tag:        1.0.5
-Version:           1.0.5
+Stable tag:        1.0.6
+Version:           1.0.6
 
 The simplest and easiet way to stop bad web crawlers, bots  and referrer spammers from targeting your wordpress website
 
@@ -59,6 +59,12 @@ The additional functionality planned for this plugin for the future is also to r
 == Screenshots ==
 
 == Changelog ==
+
+    =1.0.6=
+    	Uodated license header
+    	Improved refactoring
+    	Added minimum WordPress version check
+    	
 
 	= 1.0.5 =
 	
