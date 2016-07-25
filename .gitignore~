@@ -21,6 +21,4 @@ wp-content/plugins/hello.php
 
 .project
 *.settings
-.buildpath
-*.zip
 
