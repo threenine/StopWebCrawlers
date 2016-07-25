@@ -41,9 +41,10 @@ function swc_main_page() {
 function swc_add_page() {
 	global $wpdb;
 	
+	
 	$table_name = $wpdb->prefix . "swc_blacklist";
 	
-	//if (wp_verify_nonce ( $_REQUEST ['nonce'], basename ( __FILE__ ) )) {
+	if (wp_verify_nonce ( $_POST ['nonce'], 'add' )) {
 		$wpdb->insert($table_name, array (
 				'botnickname' => $_POST ['swc_nickname'],
 				'botname' => $_POST ['swc_description'],
@@ -52,7 +53,7 @@ function swc_add_page() {
 				'botobs' => '',
 				'botstate' => 'Enabled' 
 		) );
-	//}
+	}
 	include 'views/addnew.php';
 }
 

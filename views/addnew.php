@@ -1,7 +1,7 @@
 <div class="wrap">
 <h2>Add Web Crawler</h2>
 <form method="POST" name="swc_add_new_crawler" >
-   <input type="hidden" name="nonce" value="<?php echo wp_create_nonce(basename(__FILE__))?>"/>
+  <?php wp_nonce_field('add', 'nonce');?>
 
 <table class="form-table">
 			<tr valign="top">
