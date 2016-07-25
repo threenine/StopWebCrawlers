@@ -22,5 +22,12 @@
 		</table>
 	<?php submit_button(); ?>
 	</form>
+	
+	  <?php if (!empty($notice)): ?>
+    <div id="notice" class="error"><p><?php echo $notice ?></p></div>
+    <?php endif;?>
+    <?php if (!empty($message)): ?>
+    <div id="message" class="updated"><p><?php echo $message ?></p></div>
+    <?php endif;?>
 </div>
 
