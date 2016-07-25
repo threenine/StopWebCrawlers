@@ -35,7 +35,7 @@ define('SWCURL', plugin_dir_url(__FILE__));
 define('SWCDOMAIN', get_site_url() );
 
 require_once (SWCPATH . "settings/load-plugin.php");
-require_once (SWCPATH . "settings/options/plugin_options_tabbed.php");
+require_once (SWCPATH . "mainmenu.php");
 require_once (SWCPATH . "functions/functions.php");
 require_once (ABSPATH . "wp-includes/pluggable.php");
 
@@ -44,15 +44,8 @@ register_activation_hook( __FILE__, 'swc_plugin_activated');
 
 add_action( 'plugins_loaded', 'swc_plugin_db_update' );
 add_action( 'plugins_loaded', 'swc_start' );
-add_filter( 'plugin_action_links_$plugin', 'swc_plugin_settings_link' );
-add_action( 'admin_menu', 'swc_add_menu_items' );
 
-// Add settings link on plugin page
-function swc_plugin_settings_link($links) {
-	$settings_link = '<a href="options-general.php?page=Stop-Web-Crawlers">Settings</a>';
-	array_unshift($links, $settings_link);
-	return $links;
-}
+
 
 $plugin = plugin_basename(__FILE__);
 
@@ -69,17 +62,6 @@ if ( ! class_exists( 'WP_List_Table' ) ) {
 
 require dirname( __FILE__ ) . '/includes/list-tables/class-swc-list-table.php';
 
-
-
-function swc_add_menu_items() {
-	add_submenu_page(
-			'stop-web-crawlers', // $parent_slug
-			'Web Crawlers Table', // string $page_title
-			'Web Crawlers Table', // string $menu_title
-			'manage_options', // string $capability
-			'web-crawlers-table',
-			'swc_render_list_page' );
-}
 
 
 
@@ -121,11 +103,7 @@ class Stop_Web_Crawlers {
 	
 	
 }
-	function swc_render_list_page() {
-		$crawler_list_table = new swc_List_Table();
-		$crawler_list_table->prepare_items();
-		require dirname( __FILE__ ) . '/includes/list-tables/page.php';
-	}
+	
 	
 
 ?>
