@@ -60,7 +60,8 @@ The additional functionality planned for this plugin for the future is also to r
 
 == Changelog ==
 
-   =1.1.0=
+    =1.1.0=
+   
    		Added Logo to Admin Dashboard Menu
    		Add New Web Crawler functionality implemented
    		Dashboard View Revamp
@@ -69,7 +70,8 @@ The additional functionality planned for this plugin for the future is also to r
    		
    
     =1.0.6=
-    	Uodated license header
+    
+    	Updated license header
     	Improved refactoring
     	Added minimum WordPress version check
     	
