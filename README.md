@@ -9,7 +9,10 @@ please take note that it may not necessarily supported.
 ## Release version
 The release version of this plugin is available  from the WordPress.org Plugin Directory:
 
-[Stop Web Crawlers](https://wordpress.org/plugins/stop-web-crawlers)
+[Stop Web Crawlers - WordPress.com Plugin Directory](https://wordpress.org/plugins/stop-web-crawlers)
+
+For more information regarding the plugin visit our plug-in home page
+[Stop Web Crawlers ](http://threenine.co.uk/plugins/stop-web-crawlers/)
 
 ## Getting Started
 This pugin is hosted on the official WordPress plugin subversion directory, therefore the steps here outline the process
