@@ -70,3 +70,16 @@ of synchronizing updates between the two repositories.
 		
 		$ git svn dcommit
 		
+### Tagging Releases
+
+Tagging a release in Git is very simple:
+
+	$ git tag v1.0.2
+
+To create an SVN tag, simply:
+
+	$ git svn tag 1.0.2
+
+This will create `/tags/1.0.2` in the remote SVN repository and copy all the files from the remote `/trunk` into that tag, so be sure to push all the latest code to `/trunk` before creating an SVN tag.
+
+		
