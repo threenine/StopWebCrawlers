@@ -3,7 +3,7 @@
 Contributors:      threenine
 Plugin Name:       Stop Web Crawlers
 Plugin URI:        http://threenine.co.uk/plugins/stop-web-crawlers/
-Tags:              stop web crawlers, Referer Spam, Block spammers, block bot, block bots, block bad bots, stop bot, stop bots, web crawlers
+Tags:              stop web crawlers, Referer Spam, Block spammers, block bot, block bots, seo,spam, stop bots, web crawlers
 Author URI:        http://threenine.co.uk
 Author:            Gary Woodfine
 Donate link:       https://www.paypal.me/geekiam

@@ -84,7 +84,7 @@ class Stop_Web_Crawlers {
 		$referer = strtolower($referer);
 		$table_name = $wpdb->prefix . "swc_blacklist";
 		
-		$sql = "SELECT boturl FROM " . $table_name . " WHERE botstate = 'Enabled'";
+		$sql = "SELECT boturl FROM " . $table_name . " WHERE boturl = '" . $referer. "' AND botstate = 'Enabled'";
 		$bots = $wpdb->get_results($sql) or die(mysql_error());
 
 		foreach($bots as $row) {
