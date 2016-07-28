@@ -9,7 +9,11 @@ please take note that it may not necessarily supported.
 ## Release version
 The release version of this plugin is available  from the WordPress.org Plugin Directory:
 
-[Stop Web Crawlers](https://wordpress.org/plugins/stop-web-crawlers)
+[Stop Web Crawlers - WordPress.com Plugin Directory](https://wordpress.org/plugins/stop-web-crawlers)
+
+For more information regarding the plugin visit our plug-in home page
+
+[Stop Web Crawlers ](http://threenine.co.uk/plugins/stop-web-crawlers/)
 
 ## Getting Started
 This pugin is hosted on the official WordPress plugin subversion directory, therefore the steps here outline the process
@@ -69,4 +73,17 @@ of synchronizing updates between the two repositories.
 		$ git commit
 		
 		$ git svn dcommit
+		
+### Tagging Releases
+
+Tagging a release in Git is very simple:
+
+	$ git tag v1.0.2
+
+To create an SVN tag, simply:
+
+	$ git svn tag 1.0.2
+
+This will create `/tags/1.0.2` in the remote SVN repository and copy all the files from the remote `/trunk` into that tag, so be sure to push all the latest code to `/trunk` before creating an SVN tag.
+
 		

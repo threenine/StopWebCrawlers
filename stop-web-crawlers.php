@@ -2,7 +2,7 @@
  Plugin Name: Stop Web Crawlers
  Plugin URI: http://threenine.co.uk/product/stop-web-crawlers/
  Description: Blocks traffic referrer spam bots
- Version: 1.1.0
+ Version: 1.2.0
  Author: Three Nine Consulting
  Author URI: http://threenine.co.uk
  License: GPLv2 or later
@@ -84,7 +84,7 @@ class Stop_Web_Crawlers {
 		$referer = strtolower($referer);
 		$table_name = $wpdb->prefix . "swc_blacklist";
 		
-		$sql = "SELECT boturl FROM " . $table_name . " WHERE botstate = 'Enabled'";
+		$sql = "SELECT boturl FROM " . $table_name . " WHERE boturl = '" . $referer. "' AND botstate = 'Enabled'";
 		$bots = $wpdb->get_results($sql) or die(mysql_error());
 
 		foreach($bots as $row) {
