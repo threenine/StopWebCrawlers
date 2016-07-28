@@ -3,13 +3,13 @@
 Contributors:      threenine
 Plugin Name:       Stop Web Crawlers
 Plugin URI:        http://threenine.co.uk/plugins/stop-web-crawlers/
-Tags:              stop web crawlers, Referer Spam, Block spammers, block bot, block bots, block bad bots, stop bot, stop bots, web crawlers
+Tags:              stop web crawlers, Referer Spam, Block spammers, block bot, block bots, seo,spam, stop bots, web crawlers
 Author URI:        http://threenine.co.uk
 Author:            Gary Woodfine
 Donate link:       https://www.paypal.me/geekiam
 Requires at least: 4.5
 Tested up to:      4.5.3
-Stable tag:        1.1.0
+Stable tag:        1.2.0
 
 
 The simplest and easiet way to stop bad web crawlers, bots  and referrer spammers from targeting your wordpress website
@@ -30,7 +30,7 @@ The simplest and easiet way to stop bad web crawlers, bots  and referrer spammer
  	> adviceforum.info,  hulfingtonpost.com,  europages.com.ru,  gobongo.info,  cenoval.ru,  cityadspix.com
   	>
    
-   + 100's of others, 
+   + 1000's of others, 
    
    If these Crawlers attemtp to crawl your website they sent *403 access prohibited error response*  
  
@@ -60,6 +60,14 @@ The additional functionality planned for this plugin for the future is also to r
 
 == Changelog ==
 
+   =1.2.0=
+   		Updated the database to include over 1100 known referer spam bots
+   		Improve blocking
+   		Updated Dashboard Text
+   		Tested against WordPress beta 4.7
+   		
+   		
+   
     =1.1.0=
    
    		Added Logo to Admin Dashboard Menu
