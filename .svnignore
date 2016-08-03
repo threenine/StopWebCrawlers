@@ -10,9 +10,13 @@ wp-content/upgrade/
 wp-content/uploads/
 wp-content/wp-cache-config.php
 wp-content/plugins/hello.php
+<<<<<<< 23af2fe3de021b096592550641cffe55b6f7cada
 
 .DS_Store
 
+=======
+.DS_Store
+>>>>>>> Update .svnignore
 /.htaccess
 /license.txt
 /readme.html
