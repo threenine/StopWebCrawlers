@@ -1,5 +1,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> Initial Commit
 =======
 
 >>>>>>> Initial Commit
@@ -25,6 +29,7 @@ wp-content/plugins/hello.php
 /sitemap.xml.gz
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 /sitemap.xml
 /sitemap.xml.gz
@@ -35,11 +40,16 @@ wp-content/plugins/hello.php
 =======
 =======
 >>>>>>> Initial Commit
+=======
+>>>>>>> Initial Commit
 *.buildpath
 *.settings
 *.project
 *.gitignore
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> Initial Commit
+=======
 >>>>>>> Initial Commit
 =======
 >>>>>>> Initial Commit
