@@ -14,6 +14,7 @@ wp-content/plugins/hello.php
 /license.txt
 /readme.html
 <<<<<<< HEAD
+<<<<<<< HEAD
 /sitemap.xml
 /sitemap.xml.gz
 
@@ -26,8 +27,13 @@ wp-content/plugins/hello.php
 *.zip
 
 =======
+=======
+>>>>>>> Initial Commit
 README.md
 /sitemap.xml
 /sitemap.xml.gz
 
+<<<<<<< HEAD
+>>>>>>> Initial Commit
+=======
 >>>>>>> Initial Commit
