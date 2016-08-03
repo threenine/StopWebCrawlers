@@ -1,15 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> Initial Commit
-=======
-
->>>>>>> Initial Commit
-=======
-
->>>>>>> Initial Commit
 *.log
 wp-config.php
 wp-content/advanced-cache.php
@@ -21,15 +10,12 @@ wp-content/upgrade/
 wp-content/uploads/
 wp-content/wp-cache-config.php
 wp-content/plugins/hello.php
-
+.DS_Store
 /.htaccess
 /license.txt
 /readme.html
 /sitemap.xml
 /sitemap.xml.gz
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 /sitemap.xml
 /sitemap.xml.gz
@@ -37,19 +23,9 @@ wp-content/plugins/hello.php
 .project
 *.settings
 
-=======
-=======
->>>>>>> Initial Commit
-=======
->>>>>>> Initial Commit
+
 *.buildpath
 *.settings
 *.project
 *.gitignore
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> Initial Commit
-=======
->>>>>>> Initial Commit
-=======
->>>>>>> Initial Commit
+
