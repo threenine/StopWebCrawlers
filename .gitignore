@@ -13,6 +13,7 @@ wp-content/plugins/hello.php
 /.htaccess
 /license.txt
 /readme.html
+<<<<<<< HEAD
 /sitemap.xml
 /sitemap.xml.gz
 
@@ -24,3 +25,9 @@ wp-content/plugins/hello.php
 .buildpath
 *.zip
 
+=======
+README.md
+/sitemap.xml
+/sitemap.xml.gz
+
+>>>>>>> Initial Commit

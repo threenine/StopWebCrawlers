@@ -265,4 +265,3 @@ class swc_List_Table extends WP_List_Table {
 	}
 
 }
-

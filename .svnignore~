@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 
->>>>>>> Initial Commit
 *.log
 wp-config.php
 wp-content/advanced-cache.php
@@ -19,17 +16,6 @@ wp-content/plugins/hello.php
 /readme.html
 /sitemap.xml
 /sitemap.xml.gz
-<<<<<<< HEAD
-
-/sitemap.xml
-/sitemap.xml.gz
-
-.project
-*.settings
-
-=======
 *.buildpath
 *.settings
 *.project
-*.gitignore
->>>>>>> Initial Commit
