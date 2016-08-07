@@ -9,11 +9,7 @@ Author:            Gary Woodfine
 Donate link:       https://www.paypal.me/geekiam
 Requires at least: 4.5
 Tested up to:      4.5.3
-<<<<<<< HEAD
 Stable tag:        1.2.2
-=======
-Stable tag:        1.2.0
->>>>>>> 46824ace5b5d45c02daddfba56d793018b6e8e1a
 
 
 The simplest and easiet way to stop bad web crawlers, bots  and referrer spammers from targeting your wordpress website
@@ -27,11 +23,7 @@ The simplest and easiet way to stop bad web crawlers, bots  and referrer spammer
  Stop Web Crawlers will reduce the likelihood that your site will be crawled by the Referrer spammers like;
  
  	> semalt.com , Darodar.com, buttons-for-website, ilovevitaly.co, screentoolkit.com, myftpupload.com,
-<<<<<<< HEAD
  	> best-seo-offer.com,  Get-Free-Traffic-Now.com,  best-seo-solution.com,  4webmasters.org,  luxup.ru, 
-=======
- 	> best-seo-offer.com,  www.Get-Free-Traffic-Now.com,  best-seo-solution.com,  4webmasters.org,  luxup.ru, 
->>>>>>> 46824ace5b5d45c02daddfba56d793018b6e8e1a
  	> blackhatworth.com,  7makemoneyonline.com,  priceg.com,  prodvigator.ua, resellerclub.com,  savetubevideo.com,   
  	> kambasoft.com,  socialseet.ru,  superiends.org,  vodkoved.ru,  o-o-8-o-o.ru,  iskalko.ru, websocial.me,  
  	> ykecwqlixx.ru,  slftsdybbg.ru,  seoexperimenty.ru,  darodar.com,  econom.co,  edakgfvwql.ru,  adcash.com, 
@@ -40,11 +32,7 @@ The simplest and easiet way to stop bad web crawlers, bots  and referrer spammer
    
    + 1000's of others, 
    
-<<<<<<< HEAD
    If these Crawlers attempt to crawl your website they sent *403 access prohibited error response*  
-=======
-   If these Crawlers attemtp to crawl your website they sent *403 access prohibited error response*  
->>>>>>> 46824ace5b5d45c02daddfba56d793018b6e8e1a
  
  
 
@@ -72,19 +60,18 @@ The additional functionality planned for this plugin for the future is also to r
 
 == Changelog ==
 
-<<<<<<< HEAD
-   =1.2.1=
    
+	=1.2.2=
+
+		Fixed Urgent bug caused by deprecated call
+	
+	=1.2.1=
+		   
    		Typo fixed in readme file
    		Fixed error in which we were inadvertently linking to a spmmer in readme
-   		updated dashboard
-   		
-   		
-   =1.2.0=
-   
-=======
-   =1.2.0=
->>>>>>> 46824ace5b5d45c02daddfba56d793018b6e8e1a
+   		updated dashboard 
+
+	=1.2.0=
    		Updated the database to include over 1100 known referer spam bots
    		Improve blocking
    		Updated Dashboard Text
@@ -92,7 +79,7 @@ The additional functionality planned for this plugin for the future is also to r
    		
    		
    
-    =1.1.0=
+    	=1.1.0=
    
    		Added Logo to Admin Dashboard Menu
    		Add New Web Crawler functionality implemented
@@ -101,11 +88,11 @@ The additional functionality planned for this plugin for the future is also to r
    		
    		
    
-    =1.0.6=
+    	=1.0.6=
     
-    	Updated license header
-    	Improved refactoring
-    	Added minimum WordPress version check
+    		Updated license header
+    		Improved refactoring
+    		Added minimum WordPress version check
     	
 
 	= 1.0.5 =

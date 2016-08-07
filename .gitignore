@@ -1,4 +1,5 @@
 *.log
+.DS_Store
 wp-config.php
 wp-content/advanced-cache.php
 wp-content/backup-db/
@@ -13,6 +14,9 @@ wp-content/plugins/hello.php
 /.htaccess
 /license.txt
 /readme.html
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 /sitemap.xml
 /sitemap.xml.gz
 
@@ -24,3 +28,19 @@ wp-content/plugins/hello.php
 .buildpath
 *.zip
 
+=======
+=======
+>>>>>>> Initial Commit
+=======
+>>>>>>> Initial Commit
+README.md
+/sitemap.xml
+/sitemap.xml.gz
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> Initial Commit
+=======
+>>>>>>> Initial Commit
+=======
+>>>>>>> Initial Commit

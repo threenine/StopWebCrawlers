@@ -1,3 +1,4 @@
+
 *.log
 wp-config.php
 wp-content/advanced-cache.php
@@ -9,7 +10,7 @@ wp-content/upgrade/
 wp-content/uploads/
 wp-content/wp-cache-config.php
 wp-content/plugins/hello.php
-
+.DS_Store
 /.htaccess
 /license.txt
 /readme.html
@@ -21,4 +22,10 @@ wp-content/plugins/hello.php
 
 .project
 *.settings
+
+
+*.buildpath
+*.settings
+*.project
+*.gitignore
 
