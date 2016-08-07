@@ -23,51 +23,69 @@
 */
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-define('SWC', '0.2' );
-define('SWCPATH', plugin_dir_path(__FILE__) );
-define('SWCURL', plugin_dir_url(__FILE__));
-define('SWCDOMAIN', get_site_url() );
-
-require_once (SWCPATH . "settings/load-plugin.php");
-require_once (SWCPATH . "mainmenu.php");
-require_once (SWCPATH . "functions/functions.php");
-require_once (ABSPATH . "wp-includes/pluggable.php");
 
 
 register_activation_hook( __FILE__, 'swc_plugin_activated');
 
-add_action( 'plugins_loaded', 'swc_plugin_db_update' );
-add_action( 'plugins_loaded', 'swc_start' );
 
 
 
-$plugin = plugin_basename(__FILE__);
 
-
-function swc_start() {
-	$wp_bs_loaded = new Stop_Web_Crawlers ();
-}
-
-
-
-if ( ! class_exists( 'WP_List_Table' ) ) {
-	require_once ABSPATH . 'wp-admin/includes/class-wp-list-table.php';
-}
-
-require dirname( __FILE__ ) . '/includes/list-tables/class-swc-list-table.php';
+//$plugin = plugin_basename(__FILE__);
 
 
 
 
 
-class Stop_Web_Crawlers {
 
-	public function __construct() {
-		add_action( 'parse_request', array( $this, 'swc_execute' ) );
+
+if (!class_exists('Stop_Web_Crawlers')) {
+
+final class  Stop_Web_Crawlers {
+	
+	private static $instance;
+	public static function instance() {
+		if (!isset(self::$instance) && !(self::$instance instanceof Stop_Web_Crawlers)) {
+			
+			self::$instance = new Stop_Web_Crawlers;
+			self::$instance->constants();
+			self::$instance->includes();
+			self::$instance->swc_execute();
+			
+			add_action( 'plugins_loaded', 'swc_plugin_db_update' );
+			add_action( 'parse_request', array( $this, 'swc_execute' ) );
+		}
+		
+		return self::$instance;
+	}
+	private function constants() {
+		
+		if(!defined('SWC'))       define('SWC', '0.2' );
+		if(!defined('SWCPATH'))   define('SWCPATH', plugin_dir_path(__FILE__) );
+		if(!defined('SWCURL'))    define('SWCURL', plugin_dir_url(__FILE__));
+		if(!defined('SWCDOMAIN')) define('SWCDOMAIN', get_site_url() );	
 		
 	}
+	
+	private function includes(){
+		
+		require_once (SWCPATH . "settings/load-plugin.php");
+		require_once (SWCPATH . "mainmenu.php");
+		require_once (SWCPATH . "functions/functions.php");
+		require_once (ABSPATH . "wp-includes/pluggable.php");
+		
+		if ( ! class_exists( 'WP_List_Table' ) ) {
+			require_once ABSPATH . 'wp-admin/includes/class-wp-list-table.php';
+		}
+		
+		require dirname( __FILE__ ) . '/includes/list-tables/class-swc-list-table.php';
+		
+		
+		
+	}
+		
 
-	public function swc_execute() {
+	public static function swc_execute() {
 		
 		// Simply exit if logged or in admin area
 		if ( is_user_logged_in() || is_admin() ) {
@@ -97,4 +115,27 @@ class Stop_Web_Crawlers {
 	
 	
 }
+}
+
+if (class_exists('Stop_Web_Crawlers')) {
+	
+	
+	
+	
+	
+	
+	
+	if (!function_exists('stop_web_crawlers')) {
+	
+		function stop_web_crawlers() {
+				
+			return Stop_Web_Crawlers::instance();
+		}
+	}
+	
+	stop_web_crawlers();
+	
+}
+
+
 ?>
