@@ -16,6 +16,13 @@ to a 403 permission denied page.</p>
 , raise a support <a href="https://wordpress.org/support/plugin/stop-web-crawlers" target="_blank"> WordPress.org Stop Web Crawlers</a>
 or  send us an email via the <a href="http://threenine.co.uk/contact/" target="_blank">Contact Page</a>
  </p>
+ 
+ <h3>Contribute</h3>
+ <p>Stop Web Crawlers is developed and supported by <a href="http://threenine.co.uk" target="_blank">Three Nine Consulting Limited </a> for free.</p>
+ <p>If you would like to make a donation to keep the programmers stocked with caffiene and Pizza's , it would be greatly appreciated</p>
+ 
+ <p><a href="https://www.paypal.me/geekiam" target="_blank"><img src="<?php echo plugins_url ( 'images/donate.en.png',dirname(__FILE__));?>"/></a></p>
+ 
  </td>
  <td width="30%">
  <h3>How To:</h3>
