@@ -1,6 +1,12 @@
 *.log
 
+<<<<<<< 9dbfd7e95553b4ea3eb1a8e03fc6a4cd900a05dc
 .DS_Store
+=======
+/.htaccess
+/license.txt
+/readme.html
+>>>>>>> Fixed Merge Errors Again
 /sitemap.xml
 /sitemap.xml.gz
 svn
@@ -15,3 +21,7 @@ svn
 .buildpath
 *.zip
 
+<<<<<<< 9dbfd7e95553b4ea3eb1a8e03fc6a4cd900a05dc
+=======
+
+>>>>>>> Fixed Merge Errors Again
