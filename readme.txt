@@ -9,7 +9,7 @@ Author:            Gary Woodfine
 Donate link:       https://www.paypal.me/geekiam
 Requires at least: 4.5
 Tested up to:      4.5.3
-Stable tag:        1.2.2
+Stable tag:        1.3.0
 
 
 The simplest and easiet way to stop bad web crawlers, bots  and referrer spammers from targeting your wordpress website
@@ -61,17 +61,18 @@ The additional functionality planned for this plugin for the future is also to r
 == Changelog ==
 
    
+	
 	=1.2.2=
 
 		Fixed Urgent bug caused by deprecated call
 	
-	=1.2.1=
+	= 1.2.1 =
 		   
    		Typo fixed in readme file
    		Fixed error in which we were inadvertently linking to a spmmer in readme
    		updated dashboard 
 
-	=1.2.0=
+	= 1.2.0 =
    		Updated the database to include over 1100 known referer spam bots
    		Improve blocking
    		Updated Dashboard Text
@@ -79,7 +80,7 @@ The additional functionality planned for this plugin for the future is also to r
    		
    		
    
-    	=1.1.0=
+    	= 1.1.0 =
    
    		Added Logo to Admin Dashboard Menu
    		Add New Web Crawler functionality implemented
@@ -88,7 +89,7 @@ The additional functionality planned for this plugin for the future is also to r
    		
    		
    
-    	=1.0.6=
+    	= 1.0.6 =
     
     		Updated license header
     		Improved refactoring
