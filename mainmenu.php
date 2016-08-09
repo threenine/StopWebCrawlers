@@ -1,5 +1,5 @@
 <?php
-add_action ( 'admin_menu', 'swc_create_menu' );
+
 function swc_create_menu() {
 	$admin_page_title = 'Stop Web Crawlers by threenine.co.uk : Dashboard';
 	$admin_menu_title = 'Stop Web Crawlers';

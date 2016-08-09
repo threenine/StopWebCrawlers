@@ -1,4 +1,23 @@
 <?php
+
+
+if (!defined('ABSPATH')) exit;
+
+function swc_enqueue_resources_admin() {
+
+	if (isset($_GET['page']) && (($_GET['page'] == 'swc_main_menu') || ($_GET['page'] == 'add-web-crawler'))) {
+
+		// wp_enqueue_style ( $handle, $src, $deps, $ver, $media )
+		// https://developer.wordpress.org/reference/functions/wp_enqueue_style/
+		wp_enqueue_style('swc_admin', SWCURL .'css/swc_admin.css');
+		
+
+	}
+
+}
+
+
+
 function swc_plugin_activated() {
 	global $wp_version;
 	if (version_compare ( $wp_version, '4.1', '<' )) {
