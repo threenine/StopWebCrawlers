@@ -38,11 +38,14 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 				self::$instance->includes ();
 				self::$instance->swc_execute ();
 				
+				add_action ( 'admin_menu', 'swc_create_menu' );
 				add_action ( 'plugins_loaded', 'swc_plugin_db_update' );
 				add_action ( 'parse_request', array (
 						$this,
 						'swc_execute' 
 				) );
+				
+				add_filter('plugin_action_links', array(self::$instance, 'action_links'), 10, 2);
 			}
 			
 			return self::$instance;
@@ -57,8 +60,9 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 				define ( 'SWCURL', plugin_dir_url ( __FILE__ ) );
 			if (! defined ( 'SWCDOMAIN' ))
 				define ( 'SWCDOMAIN', get_site_url () );
-			if (! defined ( 'SWCAPPNAME' ))
-				define ( 'SWCAPPNAME', 'Stop Web Crawlers' );
+				if (! defined ( 'SWCAPPNAME' ))
+					define ( 'SWCAPPNAME' , 'Stop Web Crawlers' );
+			if (!defined('SWC_FILE'))    define('SWC_FILE',    plugin_basename(__FILE__));
 		}
 		
 		private function includes() {
@@ -72,6 +76,15 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 			}
 			
 			require dirname ( __FILE__ ) . '/includes/list-tables/class-swc-list-table.php';
+		}
+		public function action_links($links, $file) {
+			if ($file == SWC_FILE) {
+		
+				$swc_links = '<a href="'. admin_url('admin.php?page=swc_main_menu') .'">'. __('Dashboard', 'swc') .'</a>';
+				array_unshift($links, $swc_links);
+		
+			}
+			return $links;
 		}
 		public static function swc_execute() {
 			
