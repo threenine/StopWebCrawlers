@@ -1,6 +1,6 @@
 
 <div class="wrap">
-<h2>Stop Web Crawler : Dashboard</h2>
+<h2><?php  echo SWCAPPNAME ?> : Dashboard</h2>
 <table width="100%">
 <tbody>
 <tr>

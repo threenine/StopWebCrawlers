@@ -7,7 +7,9 @@
 			<tr valign="top">
 				<th scope="row">Name</th>
 				<td><input type="text" maxlength="30" name="swc_nickname"
-					value="" /></td>
+					value="" />
+					<p>Enter a name that you would like to use to identify this bot</p>
+					</td>
 			</tr>
 			<tr valign="top">
 				<th scope="row">Description</th>

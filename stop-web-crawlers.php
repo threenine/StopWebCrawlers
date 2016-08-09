@@ -50,13 +50,15 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 		
 		private function constants() {
 			if (! defined ( 'SWC' ))
-				define ( 'SWC', '0.2' );
+				define ( 'SWC', '1.3.0' );
 			if (! defined ( 'SWCPATH' ))
 				define ( 'SWCPATH', plugin_dir_path ( __FILE__ ) );
 			if (! defined ( 'SWCURL' ))
 				define ( 'SWCURL', plugin_dir_url ( __FILE__ ) );
 			if (! defined ( 'SWCDOMAIN' ))
 				define ( 'SWCDOMAIN', get_site_url () );
+			if (! defined ( 'SWCAPPNAME' ))
+				define ( 'SWCAPPNAME', 'Stop Web Crawlers' );
 		}
 		
 		private function includes() {
