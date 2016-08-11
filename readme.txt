@@ -61,8 +61,12 @@ The additional functionality planned for this plugin for the future is also to r
 == Changelog ==
 
    
+   = 1.3.0 =
+   		
+   		Major refactor of the code base 
+   		
 	
-	=1.2.2=
+	= 1.2.2 =
 
 		Fixed Urgent bug caused by deprecated call
 	
