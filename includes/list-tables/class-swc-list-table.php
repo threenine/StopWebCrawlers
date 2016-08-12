@@ -57,45 +57,7 @@ class swc_List_Table extends WP_List_Table {
 				);
 	}
 
-	protected function column_nickname( $item ) {
-		$page = wp_unslash( $_REQUEST['page'] ); // WPCS: Input var ok.
-
-		// Build activate row action.
-		$edit_query_args = array(
-				'page'   => $page,
-				'action' => 'activate',
-				'bot'  => $item['id'],
-		);
-
-		$actions['activate'] = sprintf(
-				'<a href="%1$s">%2$s</a>',
-				esc_url( wp_nonce_url( admin_url( add_query_arg( $edit_query_args ) ), 'editmovie_' . $item['ID'] ) ),
-				_x( 'Change Status', 'List table row action', 'stopwebcrawlers' )
-				);
-
-
-		// Build desactivate row action.
-		$delete_query_args = array(
-				'page'   => $page,
-				'action' => 'Disable',
-				'bot'  => $item['id'],
-		);
-
-		$actions['desactivate'] = sprintf(
-				'<a href="%1$s">%2$s</a>',
-				esc_url( wp_nonce_url( admin_url( add_query_arg( $delete_query_args ) ), 'deletemovie_' . $item['ID'] ) ),
-				_x( 'Disable', 'List table row action', 'stopwebcrawlers' )
-				);
-
-
-
-		// Return the title contents.
-		return sprintf( '%1$s <span style="color:silver;">(id:%2$s)</span>%3$s',
-				$item['nickname'],
-				$item['id'],
-				$this->row_actions( $actions )
-				);
-	}
+	
 
 
 	protected function get_bulk_actions() {
