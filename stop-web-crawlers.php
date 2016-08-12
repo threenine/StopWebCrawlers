@@ -45,7 +45,7 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 						'swc_execute' 
 				) );
 				
-				add_filter('plugin_action_links', array(self::$instance, 'action_links'), 10, 2);
+				
 				add_action('admin_enqueue_scripts', 'swc_enqueue_resources_admin');
 			}
 			
@@ -67,7 +67,7 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 		}
 		
 		private function includes() {
-			require_once (SWCPATH . "settings/load-plugin.php");
+			
 			require_once (SWCPATH . "mainmenu.php");
 			require_once (SWCPATH . "functions/functions.php");
 			require_once (ABSPATH . "wp-includes/pluggable.php");
@@ -78,15 +78,7 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 			
 			require dirname ( __FILE__ ) . '/includes/list-tables/class-swc-list-table.php';
 		}
-		public function action_links($links, $file) {
-			if ($file == SWC_FILE) {
 		
-				$swc_links = '<a href="'. admin_url('admin.php?page=swc_main_menu') .'">'. __('Dashboard', 'swc') .'</a>';
-				array_unshift($links, $swc_links);
-		
-			}
-			return $links;
-		}
 		public static function swc_execute() {
 			
 			// Simply exit if logged or in admin area
