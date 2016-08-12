@@ -9,7 +9,7 @@ Author:            Gary Woodfine
 Donate link:       https://www.paypal.me/geekiam
 Requires at least: 4.5
 Tested up to:      4.5.3
-Stable tag:        1.3.0
+Stable tag:        1.3.1
 
 
 The simplest and easiet way to stop bad web crawlers, bots  and referrer spammers from targeting your wordpress website
@@ -30,7 +30,7 @@ The simplest and easiet way to stop bad web crawlers, bots  and referrer spammer
  	> adviceforum.info,  hulfingtonpost.com,  europages.com.ru,  gobongo.info,  cenoval.ru,  cityadspix.com
   	>
    
-   + 1000's of others, 
+   In total Stop Web Crawlers protects your site from 1439 known referrer spammers.
    
    If these Crawlers attempt to crawl your website they sent *403 access prohibited error response*  
  
@@ -60,6 +60,11 @@ The additional functionality planned for this plugin for the future is also to r
 
 == Changelog ==
 
+   
+   = 1.3.1 =
+   
+    	Code clean up removing deprecated classes
+    	
    
    = 1.3.0 =
    		
