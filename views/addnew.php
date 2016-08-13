@@ -4,9 +4,9 @@
   <?php wp_nonce_field('add', 'nonce');?>
 
 <table class="form-table">
-			<tr valign="top">
-				<th scope="row">Name</th>
-				<td><input type="text" maxlength="30" name="swc_nickname"
+			
+				<label for="swc_nickname">Name</label>
+				<input type="text" maxlength="30" name="swc_nickname"
 					value="" />
 					<p><label class="swc-info-label">Enter a name that you would like to use to identify this bot</label></p>
 					</td>

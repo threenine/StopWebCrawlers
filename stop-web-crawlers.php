@@ -21,6 +21,7 @@
        * 51 Franklin St, Fifth Floor,
        * Boston,
        * MA 02110-1301 USA
+       * svn cp https://plugins.svn.wordpress.org/stop-web-crawlers/trunk https://plugins.svn.wordpress.org/stop-web-crawlers/tags/1.3.1
        */
 if (! defined ( 'ABSPATH' ))
 	exit (); // Exit if accessed directly
