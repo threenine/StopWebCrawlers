@@ -1,2 +1,37 @@
 
 .wp-admin .swc-info-label { display: block; color: #555; font-style: italic; font-size: 14px; line-height: 1.5; }
+
+.swc_left {
+	float: left;
+	width: 42%;
+	padding: 25px;
+	background-color: #fff;
+}
+
+.swc_left img{
+	width: 100%;
+}
+
+.swc_right {
+	float: left;
+	margin-left: 25px;
+	width: 20%;
+	padding: 25px;
+	margin-left: 30px;
+	background-color: #fff;
+}
+
+.swc_sidebar{
+	float: left;
+	margin-left: 25px;
+	width: 20%;
+	padding: 25px;
+	margin-left: 30px;
+	background-color: #fff;
+}
+
+@media only screen and (max-width: 782px) {
+	.swc_left, .swc_right, .swc_sidebar{width: 100%; margin-left: 0px; margin-top: 20px;}
+}
+.swc_column {
+}
