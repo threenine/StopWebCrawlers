@@ -37,9 +37,9 @@ function swc_add_page() {
 	
 	if (isset($_POST ['nonce']) && wp_verify_nonce ( $_POST ['nonce'], 'add' )) {
 		
-		$nickname =  $_POST ['swc_nickname'];
-		$description = $_POST ['swc_description'];
-		$url =  $_POST ['swc_url'];
+		$nickname =  sanitize_text_field($_POST ['swc_nickname']);
+		$description = sanitize_text_field($_POST ['swc_description']);
+		$url =  sanitize_text_field($_POST ['swc_url']);
 		
 		$wpdb->insert($table_name, array (
 				'botnickname' =>$nickname,
