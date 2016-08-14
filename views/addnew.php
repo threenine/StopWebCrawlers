@@ -3,30 +3,26 @@
 <form method="POST" name="swc_add_new_crawler" >
   <?php wp_nonce_field('add', 'nonce');?>
 
-<table class="form-table">
+
 			
-				<label for="swc_nickname">Name</label>
+				
 				<input type="text" maxlength="30" name="swc_nickname"
-					value="" />
+					value="" placeholder="name"/>
 					<p><label class="swc-info-label">Enter a name that you would like to use to identify this bot</label></p>
-					</td>
-			</tr>
-			<tr valign="top">
-				<th scope="row">Description</th>
-				<td><textarea  name="swc_description"
-					value="" cols="100" rows="5" ></textarea>
+					<br/>
+		
+			
+				
+				<textarea  name="swc_description"
+					 cols="100" rows="5" placeholder="description" ></textarea>
 					<p><label class="swc-info-label">Enter a description of why you added this crawler.</label></p>
-					
-					</td>
-			</tr>
-			<tr valign="top">
-				<th scope="row">URL</th>
-				<td><input type="text" maxlength="255" name="swc_url"
-					value="" />
+					<br/>
+				
+				<input type="text" maxlength="255" name="swc_url"
+					value="" placeholder="Url" />
 					<p><label class="swc-info-label">Enter the domain name or IP address to block .i.e. semalt.com</label></p>
-					</td>
-			</tr>
-		</table>
+					<br/>
+			
 	<?php submit_button(); ?>
 	</form>
 	

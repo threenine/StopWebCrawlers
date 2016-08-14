@@ -31,11 +31,12 @@ or  send us an email via the <a href="https://threenine.co.uk/contact/" target="
 <div class="swc_sidebar">
 <a href="https://threenine.co.uk" target="_blank"><img src="<?php echo plugins_url ( 'images/threenine.png',dirname(__FILE__));?>"/></a>
 <hr/>
-
+<h4>WordPress Development</h4>
+<a href="https://threenine.co.uk" target="_blank"><img src="<?php echo plugins_url ( 'images/wordpress-development.png',dirname(__FILE__));?>"/></a>
 <h4>Support</h4>
 <hr/>
- <p>Stop Web Crawlers is developed and supported by <a href="https://threenine.co.uk" target="_blank">Three Nine Consulting Limited </a> for free.</p>
- <p>If you would like to make a donation to keep the programmers stocked with caffiene and Pizza's , would be greatly appreciated</p>
+ <p>Stop Web Crawlers is developed and supported for <strong>free.</strong></p>
+ <p>If you would like to make a donation to keep the programmers stocked with coffee and pizza's , would be greatly appreciated</p>
  
  <p><a href="https://www.paypal.me/geekiam" target="_blank"><img src="<?php echo plugins_url ( 'images/donate.en.png',dirname(__FILE__));?>"/></a></p>
  

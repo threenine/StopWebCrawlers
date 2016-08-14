@@ -15,8 +15,9 @@ class swc_List_Table extends WP_List_Table {
 	public function get_columns() {
 		$columns = array(
 				'cb'       => '<input type="checkbox" />', // Render a checkbox instead of text.
-				'botnickname'    => _x('Nickname', 'Column label', 'badbots' ),
+			
 				'botname'   => _x( 'Name', 'Column label', 'badbots' ),
+				'boturl'   => _x( 'URL', 'Column label', 'badbots' ),
 				'botstate' => _x( 'Status', 'Column label', 'badbots' ),
 				
 
