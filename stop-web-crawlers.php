@@ -3,7 +3,7 @@
        * Plugin Name: Stop Web Crawlers
        * Plugin URI: http://threenine.co.uk/product/stop-web-crawlers/
        * Description: Blocks traffic referrer spam bots
-       * Version: 1.3.1
+       * Version: 1.3.2
        * Author: Three Nine Consulting
        * Author URI: http://threenine.co.uk
        * License: GPLv2 or later
@@ -55,7 +55,7 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 		
 		private function constants() {
 			if (! defined ( 'SWC' ))
-				define ( 'SWC', '1.3.1' );
+				define ( 'SWC', '1.3.2' );
 			if (! defined ( 'SWCPATH' ))
 				define ( 'SWCPATH', plugin_dir_path ( __FILE__ ) );
 			if (! defined ( 'SWCURL' ))
