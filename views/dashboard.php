@@ -7,11 +7,7 @@ referer spammers & web spiders from attacking your website.</p>
 <p>We do this by checking the HTTP object Referer property against the details of all known referer spammers we have listed in our database. If the referer matches they are redirected to 
 to a 403 permission denied page.</p>
 
-<p>Please let us know if there is some additional functionality you would like in Stop Web Crawlers by
-<a href="https://github.com/threenine/StopWebCrawlers/issues" target="_blank">raising an Issue on our Github page</a>
-, raise a support <a href="https://wordpress.org/support/plugin/stop-web-crawlers" target="_blank"> WordPress.org Stop Web Crawlers</a>
-or  send us an email via the <a href="https://threenine.co.uk/contact/" target="_blank">Contact Page</a>
- </p>
+
  
  
  </div>
@@ -25,17 +21,26 @@ or  send us an email via the <a href="https://threenine.co.uk/contact/" target="
  
  </ul>
  
- 
- 
+ <h3>Support</h3>
+ <hr/>
+ If you have a support issue please raise a ticket on any of the below:
+ <ul>
+ <li><a href="https://github.com/threenine/StopWebCrawlers/issues" target="_blank">GitHub</a></li>
+ <li><a href="https://wordpress.org/support/plugin/stop-web-crawlers" target="_blank"> WordPress.org </a></li>
+ <li><a href="https://threenine.co.uk/contact/" target="_blank">Email</a></li>
+ </ul>
 </div>
 <div class="swc_sidebar">
 <a href="https://threenine.co.uk" target="_blank"><img src="<?php echo plugins_url ( 'images/threenine.png',dirname(__FILE__));?>"/></a>
 <hr/>
+<h4>WordPress Development</h4>
+<a href="https://threenine.co.uk/web-development/" target="_blank"><img src="<?php echo plugins_url ( 'images/wordpress-development.png',dirname(__FILE__));?>"/></a>
+<p>threenine provide custom WordPress web & mobile development services</p>
 
-<h4>Support</h4>
+<h4>Donate</h4>
 <hr/>
- <p>Stop Web Crawlers is developed and supported by <a href="https://threenine.co.uk" target="_blank">Three Nine Consulting Limited </a> for free.</p>
- <p>If you would like to make a donation to keep the programmers stocked with caffiene and Pizza's , would be greatly appreciated</p>
+ <p>Stop Web Crawlers is developed and supported for <strong>free.</strong></p>
+ <p>If you would like to make a donation to keep the programmers stocked with coffee and pizza's , would be greatly appreciated</p>
  
  <p><a href="https://www.paypal.me/geekiam" target="_blank"><img src="<?php echo plugins_url ( 'images/donate.en.png',dirname(__FILE__));?>"/></a></p>
  

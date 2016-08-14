@@ -60,6 +60,12 @@ The additional functionality planned for this plugin for the future is also to r
 
 == Changelog ==
 
+   = 1.3.2 =
+   
+   		Improved Dashboard page
+   		Added Admin CSS styles
+   		Tidied up List Table columns
+   		
    
    = 1.3.1 =
    
