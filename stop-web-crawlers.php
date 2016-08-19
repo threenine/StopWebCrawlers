@@ -26,7 +26,7 @@
 if (! defined ( 'ABSPATH' ))
 	exit (); // Exit if accessed directly
 
-register_activation_hook ( __FILE__, 'swc_plugin_activated' );
+
 
 if (! class_exists ( 'Stop_Web_Crawlers' )) {
 	final class Stop_Web_Crawlers {
@@ -48,6 +48,7 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 				
 				
 				add_action('admin_enqueue_scripts', 'swc_enqueue_resources_admin');
+				register_activation_hook ( __FILE__, 'swc_plugin_activated' );
 			}
 			
 			return self::$instance;
