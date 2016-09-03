@@ -35,5 +35,6 @@ wp-content/plugins/hello.php
 *.settings
 *.project
 *.gitignore
+.thumbs
 
 .thumbs
