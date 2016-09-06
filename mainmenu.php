@@ -27,8 +27,8 @@ function swc_render_list_page() {
 	$crawler_list_table->prepare_items ();
 	require dirname ( __FILE__ ) . '/includes/list-tables/page.php';
 }
-function swc_main_page() {
-	include '../views/dashboard.php';
+function swc_main_page(){
+	include 'views/dashboard.php';
 }
 function swc_add_page() {
 	global $wpdb;
