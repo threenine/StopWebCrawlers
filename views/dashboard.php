@@ -36,7 +36,9 @@ to a 403 permission denied page.</p>
 <h4>WordPress Development</h4>
 <a href="https://threenine.co.uk/web-development/" target="_blank"><img src="<?php echo plugins_url ( 'images/wordpress-development.png',dirname(__FILE__));?>"/></a>
 <p>threenine provide custom WordPress web & mobile development services</p>
-
+<h4>Follow</h4>
+<hr/>
+<a href="https://twitter.com/threenine39" class="twitter-follow-button" data-show-count="false">Follow @threenine39</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 <h4>Donate</h4>
 <hr/>
  <p>Stop Web Crawlers is developed and supported for <strong>free.</strong></p>
