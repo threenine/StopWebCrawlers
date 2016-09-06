@@ -16,11 +16,13 @@ function swc_create_menu() {
 	$add_new_slug = 'add-web-crawler';
 	$add_new_function = 'swc_add_page';
 	
-	add_menu_page ( $admin_page_title, $admin_menu_title, $manage_options_capability, $admin_menu_slug, $admin_menu_function, $admin_icon_url );
+	add_menu_page ( '', $admin_menu_title, $manage_options_capability, $admin_menu_slug, $admin_menu_function, $admin_icon_url );
 		
-	add_submenu_page ( $admin_menu_slug, $admin_list_page_title, $list_menu_title,  $manage_options_capability, $list_slug, $list_table_function );
+	add_submenu_page ( $admin_menu_slug, 'Dashboard', 'Dashboard', $manage_options_capability, $admin_menu_slug, $admin_menu_function);
 	
-	add_submenu_page ( $admin_menu_slug, $add_new_crawler_title,  $add_new_title, $manage_options_capability, $add_new_slug, $add_new_function );
+	add_submenu_page ( $admin_menu_slug, $admin_list_page_title, $list_menu_title,  $manage_options_capability, $add_new_slug , $list_table_function );
+	
+	add_submenu_page ( $admin_menu_slug, $add_new_crawler_title,  $add_new_title, $manage_options_capability, $list_slug , $add_new_function );
 }
 function swc_render_list_page() {
 	$crawler_list_table = new swc_List_Table ();

@@ -3,11 +3,11 @@
        * Plugin Name: Stop Web Crawlers
        * Plugin URI: http://threenine.co.uk/product/stop-web-crawlers/
        * Description: Blocks traffic referrer spam bots
-       * Version: 1.3.2
+       * Version: 1.3.3
        * Author: Three Nine Consulting
        * Author URI: http://threenine.co.uk
        * License: GPLv2 or later
-       *
+       *  Stable tag: 1.3.3
        * Copyright 2016 Three Nine Consulting (email : support@threenine.co.uk)
        * This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as
        * published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
@@ -46,7 +46,7 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 						'swc_execute' 
 				) );
 				
-				
+				add_filter('plugin_action_links', array(self::$instance, 'action_links'), 10, 2);
 				add_action('admin_enqueue_scripts', 'swc_enqueue_resources_admin');
 				register_activation_hook ( __FILE__, 'swc_plugin_activated' );
 			}
@@ -56,7 +56,7 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 		
 		private function constants() {
 			if (! defined ( 'SWC' ))
-				define ( 'SWC', '1.3.2' );
+				define ( 'SWC', '1.3.3' );
 			if (! defined ( 'SWCPATH' ))
 				define ( 'SWCPATH', plugin_dir_path ( __FILE__ ) );
 			if (! defined ( 'SWCURL' ))
@@ -79,6 +79,16 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 			}
 			
 			require dirname ( __FILE__ ) . '/includes/list-tables/class-swc-list-table.php';
+		}
+
+		private function action_links($links, $file) {
+			if ($file == SWC_FILE) {
+				
+				$swc_links = '<a href="'. admin_url('admin.php?page=swc_main_menu') .'">'. esc_html__('Dashboard', 'stop-web-crawlers') .'</a>';
+				array_unshift($links, $swc_links);
+				
+			}
+			return $links;
 		}
 		
 		public static function swc_execute() {
@@ -114,6 +124,7 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 }
 
 if (class_exists ( 'Stop_Web_Crawlers' )) {
+
 	
 	if (! function_exists ( 'stop_web_crawlers' )) {
 		function stop_web_crawlers() {
@@ -123,5 +134,6 @@ if (class_exists ( 'Stop_Web_Crawlers' )) {
 	
 	stop_web_crawlers ();
 }
+
 
 ?>
