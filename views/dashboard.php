@@ -6,6 +6,15 @@
 referer spammers & web spiders from attacking your website.</p>
 <p>We do this by checking the HTTP object Referer property against the details of all known referer spammers we have listed in our database. If the referer matches they are redirected to 
 to a 403 permission denied page.</p>
+
+<h3>Request a feature</h3>
+<p>We are constantly trying to improve this plugin. We have some ideas to improve on it. However, it's vitally important 
+	we get your feedback</p>
+	<p>If you have an product feature or an idea please let us know!</p>
+	
+
+	
+
 </div>
  <div class="swc_right">
  <h3>How To:</h3>

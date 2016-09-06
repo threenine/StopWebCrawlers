@@ -46,7 +46,7 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 						'swc_execute' 
 				) );
 				
-				add_filter('plugin_action_links', array(self::$instance, 'action_links'), 10, 2);
+				
 				add_action('admin_enqueue_scripts', 'swc_enqueue_resources_admin');
 				register_activation_hook ( __FILE__, 'swc_plugin_activated' );
 			}
@@ -81,15 +81,7 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 			require dirname ( __FILE__ ) . '/includes/list-tables/class-swc-list-table.php';
 		}
 
-		private function action_links($links, $file) {
-			if ($file == SWC_FILE) {
-				
-				$swc_links = '<a href="'. admin_url('admin.php?page=swc_main_menu') .'">'. esc_html__('Dashboard', 'stop-web-crawlers') .'</a>';
-				array_unshift($links, $swc_links);
-				
-			}
-			return $links;
-		}
+	
 		
 		public static function swc_execute() {
 			
