@@ -76,7 +76,6 @@ of synchronizing updates between the two repositories.
 		$ git svn dcommit
 		
 ### Tagging Releases
-
 Tagging a release in Git is very simple:
 
 	$ git tag v1.0.2
@@ -86,5 +85,14 @@ To create an SVN tag, simply:
 	$ git svn tag 1.0.2
 
 This will create `/tags/1.0.2` in the remote SVN repository and copy all the files from the remote `/trunk` into that tag, so be sure to push all the latest code to `/trunk` before creating an SVN tag.
+
+### Subversion tagging
+
+It appears that there is now an issue with git svn tagging. We now have to tag using subversion directly.
+Download code from svn Repo
+
+		$ svn checkout https://plugins.svn.wordpress.org/stop-web-crawlers/
+		$ svn cp https://plugins.svn.wordpress.org/stop-web-crawlers/trunk https://plugins.svn.wordpress.org/stop-web-crawlers/tags/1.3.1
+
 
 		
