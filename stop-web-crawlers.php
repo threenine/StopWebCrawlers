@@ -3,11 +3,11 @@
        * Plugin Name: Stop Web Crawlers
        * Plugin URI: http://threenine.co.uk/product/stop-web-crawlers/
        * Description: Blocks traffic referrer spam bots
-       * Version: 1.3.3
+       * Version: 1.3.4
        * Author: Three Nine Consulting
        * Author URI: http://threenine.co.uk
        * License: GPLv2 or later
-       *  Stable tag: 1.3.3
+       *  Stable tag: 1.3.4
        * Copyright 2016 Three Nine Consulting (email : support@threenine.co.uk)
        * This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as
        * published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
@@ -37,18 +37,16 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 				self::$instance = new Stop_Web_Crawlers ();
 				self::$instance->constants ();
 				self::$instance->includes ();
-				self::$instance->swc_execute ();
+				//self::$instance->swc_execute ();
 				
 				add_action ( 'admin_menu', 'swc_create_menu' );
 				add_action ( 'plugins_loaded', 'swc_plugin_db_update' );
-				add_action ( 'parse_request', array (
-						$this,
-						'swc_execute' 
-				) );
+				add_action ( 'parse_request', array ( 'Request_Parser', 'execute' ));
 				
 				
 				add_action('admin_enqueue_scripts', 'swc_enqueue_resources_admin');
 				register_activation_hook ( __FILE__, 'swc_plugin_activated' );
+				
 			}
 			
 			return self::$instance;
@@ -56,7 +54,7 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 		
 		private function constants() {
 			if (! defined ( 'SWC' ))
-				define ( 'SWC', '1.3.3' );
+				define ( 'SWC', '1.3.4' );
 			if (! defined ( 'SWCPATH' ))
 				define ( 'SWCPATH', plugin_dir_path ( __FILE__ ) );
 			if (! defined ( 'SWCURL' ))
@@ -81,43 +79,15 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 			
 			require dirname ( __FILE__ ) . '/includes/list-tables/class-swc-list-table.php';
 			require dirname ( __FILE__ ) . '/includes/swc-core.php';
+			require dirname ( __FILE__ ) . '/includes/swc-core/class-swc-request-parser.php';
 		}
 
-	
+
+
+
+
 		
-		public static function swc_execute() {
-			
-			// Simply exit if logged or in admin area
-			if (is_user_logged_in () || is_admin ()) {
-				return;
-			}
-			
-			global $wpdb;
-			//$referer = isset ( $_SERVER ['HTTP_REFERER'] ) ? $_SERVER ['HTTP_REFERER'] : false;
-			
-			$vars = swc_get_server_vars();
-			list ($ip_address, $request_uri, $query_string, $user_agent, $referer, $protocol, $method, $date) = $vars;
-
-
-			if (empty ( $referer )) {
-				return;
-			}
-			
-			$referer = strtolower ( $referer );
-			$table_name = $wpdb->prefix . "swc_blacklist";
-			
-			$sql = "SELECT boturl FROM " . $table_name . " WHERE boturl = '" . $referer . "' AND botstate = 'Enabled'";
-			$bots = $wpdb->get_results ( $sql );
-			
-			foreach ( $bots as $row ) {
-				if (strpos ( $referer, $row->boturl ) !== false) {
-					wp_die ( '', '', array (
-							'response' => 403 
-					) );
-					exit ();
-				}
-			}
-		}
+	     
 	}
 }
 
