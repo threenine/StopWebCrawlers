@@ -21,6 +21,11 @@
 	background-color: #fff;
 }
 
+.swc_sidebar img{
+	width:100%;
+	height:auto;
+}
+
 .swc_sidebar{
 	float: left;
 	margin-left: 25px;

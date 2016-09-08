@@ -9,7 +9,7 @@ Author:            Gary Woodfine
 Donate link:       https://www.paypal.me/geekiam
 Requires at least: 4.5
 Tested up to:      4.5.3
-Stable tag:        1.3.3
+Stable tag:        1.3.4
 
 
 The simplest and easiet way to stop bad web crawlers, bots  and referrer spammers from targeting your wordpress website
@@ -60,6 +60,10 @@ The additional functionality planned for this plugin for the future is also to r
 
 == Changelog ==
 
+   = 1.3.4 =
+
+    Added submit a feature email
+    
    = 1.3.3 =
 
     Removed duplicate menu label in admin menu
