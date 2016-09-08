@@ -67,6 +67,7 @@ The additional functionality planned for this plugin for the future is also to r
     Algorithm improvements to Bot detection
     Updated product description url
     added version number checker
+    added access to settings on plugin settings
     
    = 1.3.3 =
 
