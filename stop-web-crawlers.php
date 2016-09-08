@@ -74,11 +74,13 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 			require_once (SWCPATH . "functions/functions.php");
 			require_once (ABSPATH . "wp-includes/pluggable.php");
 			
+			
 			if (! class_exists ( 'WP_List_Table' )) {
 				require_once ABSPATH . 'wp-admin/includes/class-wp-list-table.php';
 			}
 			
 			require dirname ( __FILE__ ) . '/includes/list-tables/class-swc-list-table.php';
+			require dirname ( __FILE__ ) . '/includes/swc-core.php';
 		}
 
 	
@@ -91,8 +93,12 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 			}
 			
 			global $wpdb;
-			$referer = isset ( $_SERVER ['HTTP_REFERER'] ) ? $_SERVER ['HTTP_REFERER'] : false;
+			//$referer = isset ( $_SERVER ['HTTP_REFERER'] ) ? $_SERVER ['HTTP_REFERER'] : false;
 			
+			$vars = swc_get_server_vars();
+			list ($ip_address, $request_uri, $query_string, $user_agent, $referer, $protocol, $method, $date) = $vars;
+
+
 			if (empty ( $referer )) {
 				return;
 			}
