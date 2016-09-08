@@ -37,12 +37,13 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 				self::$instance = new Stop_Web_Crawlers ();
 				self::$instance->constants ();
 				self::$instance->includes ();
+				self::$instance->checkVersion();
 				//self::$instance->swc_execute ();
 				
 				add_action ( 'admin_menu', 'swc_create_menu' );
 				add_action ( 'plugins_loaded', 'swc_plugin_db_update' );
 				add_action ( 'parse_request', array ( 'Request_Parser', 'execute' ));
-				
+				add_filter ('plugin_action_links', array(self::$instance, 'action_links'), 10, 2);
 				
 				add_action('admin_enqueue_scripts', 'swc_enqueue_resources_admin');
 				register_activation_hook ( __FILE__, 'swc_plugin_activated' );
@@ -53,8 +54,8 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 		}
 		
 		private function constants() {
-			if (! defined ( 'SWC' ))
-				define ( 'SWC', '1.3.4' );
+			if (! defined ( 'SWC_VERSION' ))
+				define ( 'SWC_VERSION', '1.3.4' );
 			if (! defined ( 'SWCPATH' ))
 				define ( 'SWCPATH', plugin_dir_path ( __FILE__ ) );
 			if (! defined ( 'SWCURL' ))
@@ -81,7 +82,24 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 			require dirname ( __FILE__ ) . '/includes/swc-core.php';
 			require dirname ( __FILE__ ) . '/includes/swc-core/class-swc-request-parser.php';
 		}
+		private function checkVersion()
+		{
+			$swc_version = get_site_option('SWC_VERSION');
+			if(!$swc_version){
+				add_site_option('SWC_VERSION', SWC_VERSION);
+				return;
+			}
+		}
 
+		public function action_links($links, $file) {
+			if ($file == SWC_FILE) {
+				
+				$bbb_links = '<a href="'. admin_url('admin.php?page=swc_main_menu') .'">'. esc_html__('Settings', 'stop-web-crawlers') .'</a>';
+				array_unshift($links, $bbb_links);
+				
+			}
+			return $links;
+		}
 
 
 
