@@ -21,7 +21,7 @@
        * 51 Franklin St, Fifth Floor,
        * Boston,
        * MA 02110-1301 USA
-       * svn cp https://plugins.svn.wordpress.org/stop-web-crawlers/trunk https://plugins.svn.wordpress.org/stop-web-crawlers/tags/1.3.1
+       * 
        */
 if (! defined ( 'ABSPATH' ))
 	exit (); // Exit if accessed directly
@@ -81,39 +81,39 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 			require dirname ( __FILE__ ) . '/includes/list-tables/class-swc-list-table.php';
 			require dirname ( __FILE__ ) . '/includes/swc-core.php';
 			require dirname ( __FILE__ ) . '/includes/swc-core/class-swc-request-parser.php';
+			require dirname ( __FILE__ ) . '/includes/swc-db-upgrade/DatabaseUpdate.php';
 		}
 		private function checkVersion()
 		{
 			//Get Current version
-			$swc_version = get_site_option('SWC_VERSION');
-			if(!$swc_version){
+			$installed_version = get_site_option('SWC_VERSION');
+			if(!$installed_version){
 				add_site_option('SWC_VERSION', SWC_VERSION);
 				return;
 			}
+
+			if(version_compare($installed_version, SWC_VERSION, '>')){
+					$update = new DatabaseUpdate();
+					$update->upgradeToVersion($installed_version, SWC_VERSION);
+
+			}
+			
 
 		}
 
 		public function action_links($links, $file) {
 			if ($file == SWC_FILE) {
-				
-				$bbb_links = '<a href="'. admin_url('admin.php?page=swc_main_menu') .'">'. esc_html__('Settings', 'stop-web-crawlers') .'</a>';
-				array_unshift($links, $bbb_links);
-				
+				$swc_links = '<a href="'. admin_url('admin.php?page=swc_main_menu') .'">'. esc_html__('Settings', 'stop-web-crawlers') .'</a>';
+				array_unshift($links, $swc_links);
 			}
 			return $links;
 		}
-
-
-
-
-		
-	     
+ 
 	}
 }
 
 if (class_exists ( 'Stop_Web_Crawlers' )) {
 
-	
 	if (! function_exists ( 'stop_web_crawlers' )) {
 		function stop_web_crawlers() {
 			return Stop_Web_Crawlers::instance ();
