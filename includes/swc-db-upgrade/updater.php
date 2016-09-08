@@ -1,11 +1,7 @@
-<?php 
-  
-	abstract class updater{
+<php 
 
- 	const SWC_BLACKLIST = 'swc_blacklist';
- 	const SWC_CRAWLER_LOG ='swc_crawler_log';
+	public abstract class Updater{
+		abstract protected function Update();
 
- 	abstract protected function update();
-
- }
+	}
 ?>
