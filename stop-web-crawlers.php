@@ -7,7 +7,7 @@
        * Author: Three Nine Consulting
        * Author URI: http://threenine.co.uk
        * License: GPLv2 or later
-       *  Stable tag: 1.3.4
+       *  Stable tag: 1.3.5
        * Copyright 2016 Three Nine Consulting (email : support@threenine.co.uk)
        * This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as
        * published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
@@ -55,7 +55,7 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 		
 		private function constants() {
 			if (! defined ( 'SWC_VERSION' ))
-				define ( 'SWC_VERSION', '1.3.4' );
+				define ( 'SWC_VERSION', '1.3.5' );
 			if (! defined ( 'SWCPATH' ))
 				define ( 'SWCPATH', plugin_dir_path ( __FILE__ ) );
 			if (! defined ( 'SWCURL' ))
@@ -84,11 +84,13 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 		}
 		private function checkVersion()
 		{
+			//Get Current version
 			$swc_version = get_site_option('SWC_VERSION');
 			if(!$swc_version){
 				add_site_option('SWC_VERSION', SWC_VERSION);
 				return;
 			}
+
 		}
 
 		public function action_links($links, $file) {

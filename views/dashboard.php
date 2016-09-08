@@ -1,6 +1,6 @@
 
 <div class="wrap">
-<h2><?php  echo SWCAPPNAME ?>  - v <?php echo SWC ?>: Dashboard</h2>
+<h2><?php  echo SWCAPPNAME ?>  - v <?php echo SWC_VERSION ?>: Dashboard</h2>
 <div class="swc_left">
 <p>There is zero configuration required for Stop Web Crawlers to start working.  Once you have activated the plugin Stop Web Crawlers starts block over 1200 known
 referer spammers & web spiders from attacking your website.</p>
