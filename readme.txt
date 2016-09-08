@@ -63,6 +63,7 @@ The additional functionality planned for this plugin for the future is also to r
    = 1.3.4 =
 
     Added submit a feature email
+    Responsive Image in Sidebar
     
    = 1.3.3 =
 

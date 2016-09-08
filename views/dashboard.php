@@ -34,6 +34,11 @@ to a 403 permission denied page.</p>
  <li><a href="https://wordpress.org/support/plugin/stop-web-crawlers" target="_blank"> WordPress.org </a></li>
  <li><a href="https://threenine.co.uk/contact/" target="_blank">Email</a></li>
  </ul>
+ <h3>Feature Request</h3>
+ <p>Do you have an idea for the product or desperately need a feature ?</p>
+
+ <br/>
+ <a href="https://threenine.co.uk/feature-request/" target="_blank" class="button-primary">submit feature request</a>
 </div>
 <div class="swc_sidebar">
 <a href="https://threenine.co.uk" target="_blank"><img src="<?php echo plugins_url ( 'images/threenine.png',dirname(__FILE__));?>"/></a>

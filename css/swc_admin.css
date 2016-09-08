@@ -4,7 +4,7 @@
 .swc_left {
 	float: left;
 	width: 42%;
-	padding: 25px;
+	padding: 10px;
 	background-color: #fff;
 }
 
@@ -15,9 +15,8 @@
 .swc_right {
 	float: left;
 	margin-left: 25px;
-	width: 20%;
+	width: 25%;
 	padding: 25px;
-	margin-left: 30px;
 	background-color: #fff;
 }
 
@@ -28,10 +27,9 @@
 
 .swc_sidebar{
 	float: left;
-	margin-left: 25px;
-	width: 20%;
+	margin-left: 15px;
+	width: 15%;
 	padding: 25px;
-	margin-left: 30px;
 	background-color: #fff;
 }
 
