@@ -17,8 +17,8 @@ class swc_List_Table extends WP_List_Table {
 				'cb'       => '<input type="checkbox" />', // Render a checkbox instead of text.
 			
 				'botname'   => _x( 'Name', 'Column label', 'badbots' ),
-				'boturl'   => _x( 'URL', 'Column label', 'badbots' ),
-				'botstate' => _x( 'Status', 'Column label', 'badbots' ),
+				'boturl'   => _x(  'URL', 'Column label', 'badbots' ),
+				'botstate' => _x(  'Status', 'Column label', 'badbots' ),
 				
 
 		);

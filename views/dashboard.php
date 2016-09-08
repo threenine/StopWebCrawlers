@@ -18,7 +18,7 @@ to a 403 permission denied page.</p>
  
  <ul>
  <li><a href="https://threenine.co.uk/test-stop-web-crawlers/" target="_blank"> Test Stop Web Crawlers</a></li>
- <li><a href="https://threenine.co.uk/how-to-stop-referer-spam-in-google-analytics/" target="_blank" > Clear Google Analytics</a></li>
+ <li><a href="https://threenine.co.uk/how-to-stop-referer-spam-in-google-analytics/" target="_blank" > Stop Referer spam in Google Analytics</a></li>
  
  </ul>
  
@@ -31,10 +31,16 @@ to a 403 permission denied page.</p>
  <li><a href="https://threenine.co.uk/contact/" target="_blank">Email</a></li>
  </ul>
  <h3>Feature Request</h3>
+ <hr/>
  <p>Do you have an idea for the product or desperately need a feature ?</p>
 
  <br/>
  <a href="https://threenine.co.uk/feature-request/" target="_blank" class="button-primary">submit feature request</a>
+ <h3>Review</h3>
+ <hr>
+ Show support and leave a review on WordPress.org
+ <br/>
+ <a href="https://wordpress.org/support/plugin/stop-web-crawlers/reviews/" target="_blank" >Review plugin</a>
 </div>
 <div class="swc_sidebar">
 <a href="https://threenine.co.uk" target="_blank"><img src="<?php echo plugins_url ( 'images/threenine.png',dirname(__FILE__));?>"/></a>
