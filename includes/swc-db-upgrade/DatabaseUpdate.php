@@ -1,7 +1,10 @@
 <?php 
+if ( ! defined( 'ABSPATH' ) ) exit;
 if (! class_exists ( 'DatabaseUpdate' )) {
 
 	final class DatabaseUpdate {
+		private startVersion;
+		private string 
 		public function __construct(){
 
 			}
@@ -11,6 +14,10 @@ if (! class_exists ( 'DatabaseUpdate' )) {
 	    }
 
 	    public function upgradeToVersion($fromVerion, $toVersion){
+
+	    	$from = str_replace('.', '_', $fromVersion);
+	    	$to = str_replace ('.', '_', $toVersion);)
+
 
 
 
