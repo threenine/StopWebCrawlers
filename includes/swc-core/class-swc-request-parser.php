@@ -36,8 +36,9 @@ if (! class_exists ( 'Request_Parser' )) {
 				}
 			}
 		}
+		
 
 	}
 }
 
-	?>
+?>

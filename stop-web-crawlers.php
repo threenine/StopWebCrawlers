@@ -93,8 +93,9 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 			}
 
 			if(version_compare($installed_version, SWC_VERSION, '>')){
-					$update = new DatabaseUpdate();
-					$update->upgradeToVersion($installed_version, SWC_VERSION);
+					$du = new DatabaseUpdate($installed_version, SWC_VERSION);
+  					$du->upgrade();	
+					
 
 			}
 			
