@@ -1,7 +1,8 @@
-<php 
+<?php 
 
-	public abstract class Updater{
-		abstract protected function Update();
+	abstract class updater{
 
-	}
+ 	abstract protected function update();
+
+ }
 ?>
