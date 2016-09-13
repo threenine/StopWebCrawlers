@@ -3,7 +3,7 @@
        * Plugin Name: Stop Web Crawlers
        * Plugin URI: https://threenine.co.uk/plugins/stop-web-crawlers/
        * Description: Blocks traffic referrer spam bots
-       * Version: 1.3.4
+       * Version: 1.3.5
        * Author: Three Nine Consulting
        * Author URI: http://threenine.co.uk
        * License: GPLv2 or later
@@ -30,6 +30,7 @@ if (! defined ( 'ABSPATH' ))
 
 if (! class_exists ( 'Stop_Web_Crawlers' )) {
 	final class Stop_Web_Crawlers {
+		
 		private static $instance;
 		public static function instance() {
 			if (! isset ( self::$instance ) && ! (self::$instance instanceof Stop_Web_Crawlers)) {
@@ -89,12 +90,14 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 			$installed_version = get_site_option('SWC_VERSION');
 			if(!$installed_version){
 				add_site_option('SWC_VERSION', SWC_VERSION);
-				return;
+				
 			}
 
-			if(version_compare($installed_version, SWC_VERSION, '>')){
+			if(version_compare($installed_version, SWC_VERSION, '<')){
+				
 					$du = new DatabaseUpdate($installed_version, SWC_VERSION);
   					$du->upgrade();	
+  					//update_site_option('SWC_VERSION', SWC_VERSION);
 					
 
 			}
