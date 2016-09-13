@@ -11,10 +11,7 @@
 		    	
 			}
 
-			public function __destruct() {
-				parent::__destruct();
-		        //Clear any objects created
-		    }
+		
 
 		    public function upgrade(){
 		    	require dirname ( __FILE__ ) . '/updater.php';
@@ -29,6 +26,7 @@
 		    		$className = pathinfo($file, PATHINFO_FILENAME);
 		    		$updateClass = new $className;
 				    $updateClass->update();
+				    unset($className);
 				 }
 		    }
 

@@ -89,17 +89,13 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 			//Get Current version
 			$installed_version = get_site_option('SWC_VERSION');
 			if(!$installed_version){
-				add_site_option('SWC_VERSION', SWC_VERSION);
-				
+				add_site_option('SWC_VERSION', SWC_VERSION);	
 			}
 
 			if(version_compare($installed_version, SWC_VERSION, '<')){
-				
 					$du = new DatabaseUpdate($installed_version, SWC_VERSION);
   					$du->upgrade();	
-  					//update_site_option('SWC_VERSION', SWC_VERSION);
-					
-
+  				    update_site_option('SWC_VERSION', SWC_VERSION);
 			}
 			
 
