@@ -1,8 +1,10 @@
 <?php 
+
 	final class DatabaseUpdate {
 			private $start;
 			private $end; 
 			private $dbScriptFolder='/dbscript';
+			
 			public function __construct($fromVersion, $toVersion){
 				$this->start= $this->underscore($fromVersion);
 		    	$this->end= $this->underscore($toVersion);
@@ -10,6 +12,7 @@
 			}
 
 			public function __destruct() {
+				parent::__destruct();
 		        //Clear any objects created
 		    }
 
@@ -25,7 +28,7 @@
 		    		require $file;
 		    		$className = pathinfo($file, PATHINFO_FILENAME);
 		    		$updateClass = new $className;
-				     $updateClass->update();
+				    $updateClass->update();
 				 }
 		    }
 
