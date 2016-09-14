@@ -138,7 +138,9 @@ final class _1_3_5 extends updater{
 		$crawlerType =  $this->tablePrefix . $this->SWC_CRAWLER_TYPE;
 		$crawlerTable = $this->tablePrefix . $this->SWC_CRAWLERS;
 		$blacklist = $this->tablePrefix .$this->SWC_BLACKLIST;
-		$referer = $results9 = $wpdb->get_results ( "SELECT id FROM $crawlerType WHERE name='Referer'" );
+		
+		$refSel = "SELECT id FROM $crawlerType WHERE name='Referer'";
+		$referer = $results9 = $wpdb->get_results ($refSel );
 		
 		$sql = "INSERT INTO $crawlerTable (Name, Url, typeid, status)
 				SELECT botname, boturl, $referer , botstatus
