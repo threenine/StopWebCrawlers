@@ -5,6 +5,7 @@ final class _1_3_5 extends updater{
 	private $SWC_CRAWLERS_LOG = 'swc_crawlers_log';
 	private $SWC_CRAWLERS = 'swc_crawlers';
 	private $SWC_CRAWLER_TYPE = 'swc_crawler_type';
+	private $SWC_BLACKLIST = 'swc_blacklist';
 	
 	private $tablePrefix;
 	private $collation;
@@ -68,7 +69,7 @@ final class _1_3_5 extends updater{
   		`Name` varchar(255) NOT NULL,
   		`url` varchar(255) NOT NULL,
   		`typeid` mediumint(9) DEFAULT NULL,
-  		`status` bit(1) NOT NULL DEFAULT b'0',
+  		`status`  varchar(10) NOT NULL,
   		PRIMARY KEY (`id`),
   		KEY `id_idx` (`typeid`),
   		CONSTRAINT `id` FOREIGN KEY (`typeid`) REFERENCES `$crawlerType` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -106,18 +107,45 @@ final class _1_3_5 extends updater{
 	    dbDelta ( $sql );
 	}
 	
+	/**
+	 * Insert Crawlers types.
+	 *
+	 * Standing data to populate the look up fields.
+	 *
+	 * @since    1.3.5
+	 */
 	private function InsertCrawlerTypes(){
 		global $wpdb;
 		$crawlerType =  $this->tablePrefix . $this->SWC_CRAWLER_TYPE;
 		
 		$names = array('Referer', 'Scraper', 'Hacker', 'Impersonator');
 		foreach ($names as $name) {
-			$sql = "INSERT INTO $crawlerType (`name`) VALUES (' $name');";
+			$sql = "INSERT INTO $crawlerType (`name`) VALUES ('$name');";
 			$r = $wpdb->get_results ($sql );
 		}
 		
 	}
-				
+	/**
+	 * Migrate Legacy Crawlers.
+	 *
+	 *  Get all values from legacy blacklist and insert into new list.
+	 *
+	 * @since    1.3.5
+	 */
+	private function MigrateCrawlerData(){
+		global $wpdb;
+		$crawlerType =  $this->tablePrefix . $this->SWC_CRAWLER_TYPE;
+		$crawlerTable = $this->tablePrefix . $this->SWC_CRAWLERS;
+		$blacklist = $this->tablePrefix .$this->SWC_BLACKLIST;
+		$referer = $results9 = $wpdb->get_results ( "SELECT id FROM $crawlerType WHERE name='Referer'" );
+		
+		$sql = "INSERT INTO $crawlerTable (Name, Url, typeid, status)
+				SELECT botname, boturl, $referer , botstatus
+				FROM  $blacklist";
+		
+		dbDelta ( $sql );
+		
+	}
 
 } 
 ?>
