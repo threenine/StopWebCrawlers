@@ -20,14 +20,14 @@ function swc_create_menu() {
 		
 	add_submenu_page ( $admin_menu_slug, 'Dashboard', 'Dashboard', $manage_options_capability, $admin_menu_slug, $admin_menu_function);
 	
-	add_submenu_page ( $admin_menu_slug, $admin_list_page_title, $list_menu_title,  $manage_options_capability, $add_new_slug , $list_table_function );
+	add_submenu_page ( $admin_menu_slug, $admin_list_page_title, $list_menu_title,  $manage_options_capability, $list_slug , $list_table_function );
 	
-	add_submenu_page ( $admin_menu_slug, $add_new_crawler_title,  $add_new_title, $manage_options_capability, $list_slug , $add_new_function );
+	add_submenu_page ( $admin_menu_slug, $add_new_crawler_title,  $add_new_title, $manage_options_capability, $add_new_slug , $add_new_function );
 }
 function swc_render_list_page() {
 	$crawler_list_table = new swc_List_Table ();
 	$crawler_list_table->prepare_items ();
-	require dirname ( __FILE__ ) . '/includes/list-tables/page.php';
+	require dirname ( __FILE__ ) . '/views/list.php';
 }
 function swc_main_page(){
 	include 'views/dashboard.php';

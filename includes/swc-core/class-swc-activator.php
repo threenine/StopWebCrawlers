@@ -1,6 +1,16 @@
 <?php
+/**
+ * Fired during plugin activation
+ *
+ * @link       https://threenine.co.uk
+ * @since      1.3.5
+ *
+ * @package    StopWebCrawlers
+ * @subpackage StopWebCrawlers/includes
+ */
 
-final class _1_3_5 extends updater{
+
+class StopWebCrawlers_Activator {
 
 	private $SWC_CRAWLERS_LOG = 'swc_crawlers_log';
 	private $SWC_CRAWLERS = 'swc_crawlers';
@@ -9,26 +19,30 @@ final class _1_3_5 extends updater{
 	
 	private $tablePrefix;
 	private $collation;
+	/**
+	 * Do plugin install tasks.
+	 *
+	 * Long Description.
+	 *
+	 * @since    1.3.5
+	 */
+	public static function activate() {
 
-	public function __construct(){
 		global $wpdb;
 		require_once (ABSPATH . 'wp-admin/includes/upgrade.php');
 		$this->tablePrefix = $wpdb->prefix;
 		$this->collation = $wpdb->get_charset_collate ();
-	}
-	
-	
-	public function update(){
-		
 		$this->CreateCrawlerType();
 		$this->CreateCrawlerTable();
 		$this->CreateCrawlerLogTable();
 		$this->InsertCrawlerTypes();
-		$this->MigrateCrawlerData();
-
 	}
 	
-	/*
+	
+	
+	
+	
+/*
 	 * Create Crawler Type table.
 	 *
 	 * A lookup table to enable the seperation of crawlers into different types.
@@ -126,29 +140,8 @@ final class _1_3_5 extends updater{
 		}
 		
 	}
-	/**
-	 * Migrate Legacy Crawlers.
-	 *
-	 *  Get all values from legacy blacklist and insert into new list.
-	 *
-	 * @since    1.3.5
-	 */
-	private function MigrateCrawlerData(){
-		global $wpdb;
-		$crawlerType =  $this->tablePrefix . $this->SWC_CRAWLER_TYPE;
-		$crawlerTable = $this->tablePrefix . $this->SWC_CRAWLERS;
-		$blacklist = $this->tablePrefix . $this->SWC_BLACKLIST;
-		
-		$refSel = "SELECT id FROM $crawlerType WHERE name='Referer';";
-		$referer =   $wpdb->get_var($refSel );
-		
-		$sql = "INSERT INTO $crawlerTable (name, Url, typeid, status)
-				SELECT botname, boturl, $referer , botstate
-				FROM  $blacklist;";
-		
-		dbDelta ( $sql );
-		
-	}
+	
 
-} 
+}
+
 ?>

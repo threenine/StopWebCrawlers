@@ -25,8 +25,13 @@
        */
 if (! defined ( 'ABSPATH' ))
 	exit (); // Exit if accessed directly
-
-
+	
+	
+	function activate_StopWebCrawlers() {
+		require_once plugin_dir_path( __FILE__ ) . 'includes/class-swc-activator.php';
+		StopWebCrawlers_Activator::activate();
+	}
+	register_activation_hook( __FILE__, 'activate_StopWebCrawlers' );
 
 if (! class_exists ( 'Stop_Web_Crawlers' )) {
 	final class Stop_Web_Crawlers {
