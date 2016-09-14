@@ -24,6 +24,7 @@ final class _1_3_5 extends updater{
 		$this->CreateCrawlerTable();
 		$this->CreateCrawlerLogTable();
 		$this->InsertCrawlerTypes();
+		$this->MigrateCrawlerData();
 
 	}
 	
