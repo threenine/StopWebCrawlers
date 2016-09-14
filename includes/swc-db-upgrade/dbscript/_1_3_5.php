@@ -4,6 +4,10 @@ final class _1_3_5 extends updater{
 
 	private $SWC_CRAWLER_LOG = 'swc_crawler_log';
 	
+
+	public function __construct(){
+		require_once (ABSPATH . 'wp-admin/includes/upgrade.php');
+	}
 	
 	public function update(){
 		
@@ -13,14 +17,16 @@ final class _1_3_5 extends updater{
 
 
 	}
-
+	/**
+	 * Create Crawler log table.
+	 *
+	 * A log table to track attempts made by crawlers to the website to display in dashboard.
+	 *
+	 * @since    1.3.5
+	 */
 	private function CreateCrawlerLogTable(){
 
-		//echo 'Call me Al';
-		
-
 		global $wpdb;
-		require_once (ABSPATH . 'wp-admin/includes/upgrade.php');
 		
 		$tableName = $wpdb->prefix . $this->SWC_CRAWLER_LOG;
         $charset_collate = $wpdb->get_charset_collate ();
@@ -32,14 +38,8 @@ final class _1_3_5 extends updater{
 		UNIQUE (`id`)
 		) $charset_collate;";
 		
-		try {
-	     	dbDelta ( $sql );
-		}
-		catch(Exception $e){
-			$error = $e->getMessage();
-		}
-	     
-
+		
+	    dbDelta ( $sql );
 	}
 
 } 

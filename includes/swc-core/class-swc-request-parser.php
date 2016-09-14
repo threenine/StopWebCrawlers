@@ -29,7 +29,7 @@ if (! class_exists ( 'Request_Parser' )) {
 			
 			foreach ( $bots as $row ) {
 				if (strpos ( $referer, $row->boturl ) !== false) {
-					wp_die ( '', '', array (
+					wp_die ( 'Blocked access', 'Stop Web Crawlers', array (
 							'response' => 403 
 					) );
 					exit ();
