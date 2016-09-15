@@ -19,9 +19,9 @@ final class _1_3_5 extends updater{
 	
 	
 	public function update(){
-		require_once (SWCPATH . "/includes/swc-core/class-swc-dbcreate.php");
+		require (SWCPATH . "/includes/swc-core/class-swc-dbcreate.php");
 		$dbcreate = new DBCreate();
-		$dbcreate.create();		
+		$dbcreate->create();		
 		$this->MigrateCrawlerData();
 
 	}

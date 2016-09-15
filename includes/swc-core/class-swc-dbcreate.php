@@ -11,7 +11,7 @@ final class DBCreate {
 	
 	public function __construct(){
 		global $wpdb;
-		require_once (ABSPATH . 'wp-admin/includes/upgrade.php');
+		
 		$this->tablePrefix = $wpdb->prefix;
 		$this->collation = $wpdb->get_charset_collate ();
 	}

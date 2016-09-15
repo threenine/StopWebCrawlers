@@ -24,7 +24,7 @@ class StopWebCrawlers_Activator {
 
 		require_once (SWCPATH . "/includes/swc-core/class-swc-dbcreate.php");
 		$dbcreate = new DBCreate();
-		$dbcreate.create();		
+		$dbcreate->create();		
 	}
 	
 	
