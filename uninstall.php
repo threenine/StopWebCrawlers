@@ -13,6 +13,8 @@ if ( !defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 $option_name = 'stopwebcrawlers';
  
 delete_option( $option_name );
+delete_site_option(SWC_VERSION);
+
  
 // For site options in Multisite
 delete_site_option( $option_name ); 
