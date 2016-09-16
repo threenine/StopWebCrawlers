@@ -1,6 +1,15 @@
 
+
+<div class="swc_header">
+<div class="swc_header_left">
+<p><a href="https://threenine.co.uk/plugins/stop-web-crawlers/" target="_blank"><img src="<?php echo plugins_url ( 'images/dashboard_logo.png',dirname(__FILE__));?>"/></a> </p>
+</div>
+<div class="swc_header_right">
+<p></p>
+</div>
+</div>
+<div class="clear"></div> 
 <div class="wrap">
-<h2><?php  echo SWCAPPNAME ?>  - v <?php echo SWC_VERSION ?>: Dashboard</h2>
 <div class="swc_left">
 <p>There is zero configuration required for Stop Web Crawlers to start working.  Once you have activated the plugin Stop Web Crawlers starts block over 1200 known
 referer spammers & web spiders from attacking your website.</p>
@@ -45,11 +54,7 @@ to a 403 permission denied page.</p>
 <div class="swc_sidebar">
 <a href="https://threenine.co.uk" target="_blank"><img src="<?php echo plugins_url ( 'images/threenine.png',dirname(__FILE__));?>"/></a>
 <hr/>
-<h4>WordPress Development</h4>
-<a href="https://threenine.co.uk/web-development/" target="_blank"><img src="<?php echo plugins_url ( 'images/wordpress-development.png',dirname(__FILE__));?>"/></a>
-<p>threenine provide custom WordPress web & mobile development services</p>
-<h4>Follow</h4>
-<hr/>
+
 <a href="https://twitter.com/threenine39" class="twitter-follow-button" data-show-count="false">Follow @threenine39</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 <h4>Donate</h4>
 <hr/>
