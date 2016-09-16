@@ -89,78 +89,79 @@ The additional functionality planned for this plugin for the future is also to r
 
    = 1.3.2 =
    
-   		Improved Dashboard page
-   		Added Admin CSS styles
-   		Tidied up List Table columns
+   	Improved Dashboard page
+   	Added Admin CSS styles
+   	Tidied up List Table columns
    		
    
    = 1.3.1 =
    
-    	Code clean up removing deprecated classes
+    Code clean up removing deprecated classes
     	
    
    = 1.3.0 =
    		
-   		Major refactor of the code base 
+   	Major refactor of the code base 
    		
 	
 	= 1.2.2 =
 
-		Fixed Urgent bug caused by deprecated call
+	Fixed Urgent bug caused by deprecated call
 	
 	= 1.2.1 =
 		   
-   		Typo fixed in readme file
-   		Fixed error in which we were inadvertently linking to a spmmer in readme
-   		updated dashboard 
+   	Typo fixed in readme file
+   	Fixed error in which we were inadvertently linking to a spmmer in readme
+   	updated dashboard 
 
 	= 1.2.0 =
-   		Updated the database to include over 1100 known referer spam bots
-   		Improve blocking
-   		Updated Dashboard Text
-   		Tested against WordPress beta 4.7
+	
+   	Updated the database to include over 1100 known referer spam bots
+   	Improve blocking
+   	Updated Dashboard Text
+   	Tested against WordPress beta 4.7
    		
    		
    
-    	= 1.1.0 =
+    = 1.1.0 =
    
-   		Added Logo to Admin Dashboard Menu
-   		Add New Web Crawler functionality implemented
-   		Dashboard View Revamp
-   		Additional Refactoring to improve long term support
+   	Added Logo to Admin Dashboard Menu
+   	Add New Web Crawler functionality implemented
+   	Dashboard View Revamp
+   	Additional Refactoring to improve long term support
    		
    		
    
-    	= 1.0.6 =
+    = 1.0.6 =
     
-    		Updated license header
-    		Improved refactoring
-    		Added minimum WordPress version check
+    Updated license header
+    Improved refactoring
+    Added minimum WordPress version check
     	
 
 	= 1.0.5 =
 	
-		Added functionality for filter not run for logged in users or admin users
+	Added functionality for filter not run for logged in users or admin users
 	
 	= 1.0.4 =
 	
-		Updated readme text 
+	Updated readme text 
 	
 	= 1.0.3 =
 		
-		Fix upgrade bug and patched HTML formatting
+	Fix upgrade bug and patched HTML formatting
 	
 	= 1.0.2 =
 		
-		Bug fix from a source control merge issue
+	Bug fix from a source control merge issue
 	
 	= 1.0.1 =
 		
-		Cosmetic changes
+	Cosmetic changes
 	
 	= 1.0.0 =
 	
-		Initial release
+	Initial release
 		
 
 == Frequently Asked Questions ==
