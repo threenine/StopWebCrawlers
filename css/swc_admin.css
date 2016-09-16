@@ -1,4 +1,28 @@
 
+.swc_header{
+	width:100%;
+	
+}
+div.clear {
+    clear:both;
+}
+.swc_header_left{
+	float:left;
+	width:50%;
+}
+.swc_header_left img{
+	width: 45%;
+}
+.swc_header_right{
+	float:left;
+	width:50%;
+}
+.swc_header_right img{
+	float:right;
+	margin-right:35px;
+	width: 25%;
+}
+
 .wp-admin .swc-info-label { display: block; color: #555; font-style: italic; font-size: 10px; line-height: 1.5; }
 
 .swc_left {
