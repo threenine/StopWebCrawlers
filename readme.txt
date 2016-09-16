@@ -60,6 +60,17 @@ The additional functionality planned for this plugin for the future is also to r
 
 == Changelog ==
 
+   = 1.3.5 = 
+   
+   	Database schema improvements
+   	Database upgrade feature
+   	Dashboard UI enhancements
+   	Crawler Logging feature
+   	Enhanced Activation
+   	Improved Uninstall
+   	Improved crawler list updates
+   	
+   
    = 1.3.4 =
 
     Added submit a feature email
