@@ -19,7 +19,7 @@
 		
 		
 		if (empty ( $referer )) {
-			return;
+			return true;
 		}
 		
 		$referer = strtolower ( $referer );
@@ -30,6 +30,7 @@
 				if (strpos ( $referer, $row->url ) !== false) {
 					return false;
 				}
+				return true;
 			}
 		}
 	}
