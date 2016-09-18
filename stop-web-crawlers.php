@@ -26,7 +26,7 @@
 if (! defined ( 'ABSPATH' ))
 	exit (); // Exit if accessed directly
 	
-	
+	//Register the activation hooks
 	function activate_StopWebCrawlers() {
 		require_once plugin_dir_path( __FILE__ ) . 'includes/class-swc-activator.php';
 		StopWebCrawlers_Activator::activate();
@@ -52,7 +52,7 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 				add_filter ('plugin_action_links', array(self::$instance, 'action_links'), 10, 2);
 				
 				add_action('admin_enqueue_scripts', 'swc_enqueue_resources_admin');
-				register_activation_hook ( __FILE__, 'swc_plugin_activated' );
+				
 				
 			}
 			
@@ -85,9 +85,11 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 			}
 			
 			require dirname ( __FILE__ ) . '/includes/list-tables/class-swc-list-table.php';
-			require dirname ( __FILE__ ) . '/includes/swc-core.php';
 			require dirname ( __FILE__ ) . '/includes/swc-core/class-swc-request-parser.php';
 			require dirname ( __FILE__ ) . '/includes/swc-db-upgrade/DatabaseUpdate.php';
+			require dirname ( __FILE__ ) . '/includes/swc-core/class-swc-validator.php';
+			require dirname ( __FILE__ ) . '/includes/swc-core/class-swc-DAL.php';
+			require dirname ( __FILE__ ) . '/includes/swc-core/class-swc-servervariables.php';
 		}
 		private function checkVersion()
 		{

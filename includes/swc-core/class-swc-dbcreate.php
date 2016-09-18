@@ -8,6 +8,7 @@ final class DBCreate {
 	
 	private $tablePrefix;
 	private $collation;
+	private $wpdb;
 	
 	public function __construct(){
 		global $wpdb;
@@ -31,7 +32,7 @@ final class DBCreate {
 	 * @since    1.3.5
 	 */
 	private function CreateCrawlerType(){
-		global $wpdb;
+
 		$crawlerType = $this->tablePrefix  . $this->SWC_CRAWLER_TYPE;
 	
 	
@@ -55,7 +56,7 @@ final class DBCreate {
 	 * @since    1.3.5
 	 */
 	private function CreateCrawlerTable(){
-		global $wpdb;
+	
 		$crawlerTable = $this->tablePrefix . $this->SWC_CRAWLERS;
 		$crawlerType =  $this->tablePrefix . $this->SWC_CRAWLER_TYPE;
 	
@@ -84,8 +85,7 @@ final class DBCreate {
 	 */
 	private function CreateCrawlerLogTable(){
 	
-		global $wpdb;
-	
+
 		$crawlerTable = $this->tablePrefix . $this->SWC_CRAWLERS;
 		$logTable= $this->tablePrefix . $this->SWC_CRAWLERS_LOG;
 	
@@ -117,7 +117,7 @@ final class DBCreate {
 		$names = array('Referer', 'Scraper', 'Hacker', 'Impersonator');
 		foreach ($names as $name) {
 			$sql = "INSERT INTO $crawlerType (`name`) VALUES ('$name');";
-			$r = $wpdb->get_results ($sql );
+			$r = $this->wpdb->get_results ($sql );
 		}
 	
 	}

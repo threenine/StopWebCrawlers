@@ -9,6 +9,7 @@ final class _1_3_5 extends updater{
 	
 	private $tablePrefix;
 	private $collation;
+	private $wpdb;
 
 	public function __construct(){
 		global $wpdb;
@@ -34,13 +35,13 @@ final class _1_3_5 extends updater{
 	 * @since    1.3.5
 	 */
 	private function MigrateCrawlerData(){
-		global $wpdb;
+
 		$crawlerType =  $this->tablePrefix . $this->SWC_CRAWLER_TYPE;
 		$crawlerTable = $this->tablePrefix . $this->SWC_CRAWLERS;
 		$blacklist = $this->tablePrefix . $this->SWC_BLACKLIST;
 		
 		$refSel = "SELECT id FROM $crawlerType WHERE name='Referer';";
-		$referer =   $wpdb->get_var($refSel );
+		$referer =   $this->wpdb->get_var($refSel );
 		
 		$sql = "INSERT INTO $crawlerTable (name, Url, typeid, status)
 				SELECT botname, boturl, $referer , botstate
