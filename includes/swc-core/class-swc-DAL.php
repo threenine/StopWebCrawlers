@@ -34,13 +34,11 @@
  	 */
  	public function GetCrawlers($referer){
  		
- 
  		$crawler_table = $this->tablePrefix . $this->SWC_CRAWLERS;
  		$sql = "SELECT url FROM " . $crawler_table . " WHERE url = '" . $referer . "' AND status = 'Enabled'";
  		$bots = $this->wpdb->get_results ( $sql);
  		return $bots;
  		
- 		
- 	}
+ 		}
 	
 }

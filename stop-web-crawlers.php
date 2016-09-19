@@ -44,12 +44,12 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 				self::$instance->constants ();
 				self::$instance->includes ();
 				self::$instance->checkVersion();
-				//self::$instance->swc_execute ();
+				
 				
 				add_action ( 'admin_menu', 'swc_create_menu' );
 				add_action ( 'plugins_loaded', 'swc_plugin_db_update' );
 				add_action ( 'parse_request', array ( 'Request_Parser', 'execute' ));
-				add_filter ('plugin_action_links', array(self::$instance, 'action_links'), 10, 2);
+				add_filter ( 'plugin_action_links', array(self::$instance, 'action_links'), 10, 2);
 				
 				add_action('admin_enqueue_scripts', 'swc_enqueue_resources_admin');
 				
@@ -71,6 +71,8 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 				if (! defined ( 'SWCAPPNAME' ))
 					define ( 'SWCAPPNAME' , 'Stop Web Crawlers' );
 			if (!defined('SWC_FILE'))    define('SWC_FILE',    plugin_basename(__FILE__));
+			if(!defined('SWC_UPDATE_OPTIONS')) define('SWC_UPDATE_OPTIONS','' );
+			if(!defined('SWC_LIST_UPDATE_URL')) define('SWC_LIST_UPDATE_URL', 'https://api.github.com/repos/threenine/stopwebcrawlers/contents/list/referer.csv');
 		}
 		
 		private function includes() {
@@ -90,6 +92,8 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 			require dirname ( __FILE__ ) . '/includes/swc-core/class-swc-validator.php';
 			require dirname ( __FILE__ ) . '/includes/swc-core/class-swc-DAL.php';
 			require dirname ( __FILE__ ) . '/includes/swc-core/class-swc-servervariables.php';
+			require dirname ( __FILE__ ) . '/includes/swc-core/class-swc-download.php';
+			require dirname ( __FILE__ ) .  "/includes/swc-core/class-swc-dbcreate.php";
 		}
 		private function checkVersion()
 		{
@@ -114,6 +118,18 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 				array_unshift($links, $swc_links);
 			}
 			return $links;
+		}
+		
+		private function SetOptions(){
+			$activate_options = array
+			(
+					'subdomains'=> 'on',
+					'url'=> 'http://google.com',
+					'domains'=> '',
+					'last_update_time'=> '',
+					'blocked_count'=> 0,
+					'send_stats' => 'on'
+			);
 		}
  
 	}

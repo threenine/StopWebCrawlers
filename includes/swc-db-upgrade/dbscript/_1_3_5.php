@@ -13,6 +13,7 @@ final class _1_3_5 extends updater{
 
 	public function __construct(){
 		global $wpdb;
+		$this->wpdb = $wpdb;
 		require_once (ABSPATH . 'wp-admin/includes/upgrade.php');
 		$this->tablePrefix = $wpdb->prefix;
 		$this->collation = $wpdb->get_charset_collate ();

@@ -23,9 +23,20 @@ class StopWebCrawlers_Activator {
 	public static function activate() {
 
 		// Create the database schema for the  crawlers and loggers tables
-		require_once (SWCPATH . "/includes/swc-core/class-swc-dbcreate.php");
+		
 		$dbcreate = new DBCreate();
-		$dbcreate->create();		
+		$dbcreate->create();	
+		
+		$args = array(
+				'headers'     => array(
+						'Accept' => 'application/vnd.github.VERSION.raw'
+				),);
+		
+		//download the lists
+		$download = new Downloader(SWC_LIST_UPDATE_URL);
+		$theList = $download->get($args);
+		
+		
 	}
 	
 	private static function SetOptions(){
