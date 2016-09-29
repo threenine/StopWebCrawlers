@@ -112,11 +112,20 @@ final class DBCreate {
 	 * @since    1.3.5
 	 */
 	private function InsertCrawlerTypes(){
-		global $wpdb;
+		
 		$crawlerType =  $this->tablePrefix . $this->SWC_CRAWLER_TYPE;
 	
+		
+		
 		$names = array('Referer', 'Scraper', 'Hacker', 'Impersonator');
 		foreach ($names as $name) {
+			
+			$results9 = $this->wpdb->get_results ( "SELECT * FROM $crawlerType where name = '$name' limit 1" );
+				
+			
+			if (count ( $results9 ) > 0 or empty ( $name ))
+				continue;
+			
 			$sql = "INSERT INTO $crawlerType (`name`) VALUES ('$name');";
 			$r = $this->wpdb->get_results ($sql );
 		}
