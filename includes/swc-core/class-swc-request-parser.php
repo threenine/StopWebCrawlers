@@ -1,6 +1,5 @@
 <?php
-if (! defined ( 'ABSPATH' ))
-	exit ();
+if (! defined ( 'ABSPATH' )) exit ();
 if (! class_exists ( 'Request_Parser' )) {
 	final class Request_Parser {
 		

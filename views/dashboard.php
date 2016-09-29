@@ -11,11 +11,7 @@
 <div class="clear"></div> 
 <div class="wrap">
 <div class="swc_left">
-<p>There is zero configuration required for Stop Web Crawlers to start working.  Once you have activated the plugin Stop Web Crawlers starts block over 1200 known
-referer spammers & web spiders from attacking your website.</p>
-<p>We do this by checking the HTTP object Referer property against the details of all known referer spammers we have listed in our database. If the referer matches they are redirected to 
-to a 403 permission denied page.</p>
-
+<form action=""></form>
 
 
 	

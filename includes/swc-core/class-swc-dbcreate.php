@@ -12,7 +12,7 @@ final class DBCreate {
 	
 	public function __construct(){
 		global $wpdb;
-		
+		$this->wpdb = $wpdb;
 		$this->tablePrefix = $wpdb->prefix;
 		$this->collation = $wpdb->get_charset_collate ();
 	}
@@ -23,6 +23,7 @@ final class DBCreate {
 		$this->CreateCrawlerTable();
 		$this->CreateCrawlerLogTable();
 		$this->InsertCrawlerTypes();
+		$this->InsertCrawlers();
 	}
 	/*
 	 * Create Crawler Type table.
@@ -32,7 +33,7 @@ final class DBCreate {
 	 * @since    1.3.5
 	 */
 	private function CreateCrawlerType(){
-
+		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 		$crawlerType = $this->tablePrefix  . $this->SWC_CRAWLER_TYPE;
 	
 	
@@ -56,7 +57,7 @@ final class DBCreate {
 	 * @since    1.3.5
 	 */
 	private function CreateCrawlerTable(){
-	
+		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 		$crawlerTable = $this->tablePrefix . $this->SWC_CRAWLERS;
 		$crawlerType =  $this->tablePrefix . $this->SWC_CRAWLER_TYPE;
 	
@@ -84,7 +85,7 @@ final class DBCreate {
 	 * @since    1.3.5
 	 */
 	private function CreateCrawlerLogTable(){
-	
+		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 
 		$crawlerTable = $this->tablePrefix . $this->SWC_CRAWLERS;
 		$logTable= $this->tablePrefix . $this->SWC_CRAWLERS_LOG;
@@ -122,4 +123,39 @@ final class DBCreate {
 	
 	}
 	
+	/**
+	 * Insert Crawlers.
+	 *
+	 * Insert Initial list of crawlers - To be deprecated in 1.3.6.
+	 *
+	 * @since    1.3.5
+	 */
+	private function InsertCrawlers(){
+		require_once (SWCPATH . "functions/crawlers.php");
+		
+		$z = count ( $wp_swc_blacklist );
+		
+		for($i = 0; $i < $z; $i ++) {
+			$a = $wp_swc_blacklist [$i];
+		
+			$name = trim ( $a ['botnickname'] );
+			$url = trim ( $a ['boturl'] );
+			$crawler_table = $this->tablePrefix . $this->SWC_CRAWLERS;
+			
+			$results9 = $this->wpdb->get_results ( "SELECT * FROM $crawler_table where name = '$name' limit 1" );
+			
+			if (count ( $results9 ) > 0 or empty ( $name ))
+				continue;
+			
+			//To be updated in 1.3.6
+			$query = "INSERT INTO " . $crawler_table. " (name, url, typeid, status)
+                      VALUES ('" . $name . "', '" . $url . "', '1', 'Enabled')";
+			
+			$r = $this->wpdb->get_results ( $query );
+		}
+		
+		
+	}
+	
 }
+	
