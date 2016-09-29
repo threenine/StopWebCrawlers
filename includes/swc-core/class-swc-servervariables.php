@@ -20,8 +20,7 @@ public function get_server_vars() {
 	$vars = array($ip_address, $request_uri, $query_string, $user_agent, $referrer, $protocol, $method, $date);
 	
 	return $vars;
-	//return add_filter( 'get_server_vars', array($this, $vars));
-	///return apply_filters('get_server_vars', $vars);
+	
 	
 }
 

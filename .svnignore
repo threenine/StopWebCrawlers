@@ -1,5 +1,6 @@
 list
 *.log
+<<<<<<< cf167481d8daa334705803e131eaa772e472dee1
 wp-config.php
 wp-content/advanced-cache.php
 wp-content/backup-db/
@@ -15,6 +16,9 @@ wp-content/plugins/hello.php
 .DS_Store
 
 =======
+=======
+tests
+>>>>>>> Updated activation
 .DS_Store
 >>>>>>> Update .svnignore
 /.htaccess
@@ -28,7 +32,7 @@ wp-content/plugins/hello.php
 
 .project
 *.settings
-
+phpunit.xml.dist
 
 
 *.buildpath
