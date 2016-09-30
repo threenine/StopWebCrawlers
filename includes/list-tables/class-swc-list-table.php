@@ -18,11 +18,10 @@ class swc_List_Table extends WP_List_Table {
 	public function get_columns() {
 		$columns = array(
 				'cb'       => '<input type="checkbox" />', // Render a checkbox instead of text.
-			
-				'name'   => _x( 'name', 'Column label', 'swc' ),
-				'url'   => _x(  'url', 'Column label', 'swc' ),
+				'name'   => _x( 'Name', 'Column label', 'swc' ),
+				'url'   => _x(  'Url', 'Column label', 'swc' ),
 				'status' => _x(  'Status', 'Column label', 'swc' ),
-				'type' => _x(  'type', 'Column label', 'swc' )
+				'type' => _x(  'Type', 'Column label', 'swc' )
 		);
 
 		return $columns;
@@ -33,7 +32,7 @@ class swc_List_Table extends WP_List_Table {
 				'name'    => array( 'name', true ),
 				'type'   => array( 'type', true ),
 				'status' => array( 'status', true ),
-				'url' => array( 'boturl', true ),
+				'url' => array( 'url', true ),
 		);
 
 		return $sortable_columns;

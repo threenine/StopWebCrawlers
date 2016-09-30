@@ -141,7 +141,7 @@ final class DBCreate {
 	 */
 	private function InsertCrawlers(){
 		require_once (SWCPATH . "functions/crawlers.php");
-		
+		$dal = new data_access_layer();
 		$z = count ( $wp_swc_blacklist );
 		
 		for($i = 0; $i < $z; $i ++) {
@@ -156,11 +156,8 @@ final class DBCreate {
 			if (count ( $results9 ) > 0 or empty ( $name ))
 				continue;
 			
-			//To be updated in 1.3.6
-			$query = "INSERT INTO " . $crawler_table. " (name, url, typeid, status)
-                      VALUES ('" . $name . "', '" . $url . "', '1', 'Enabled')";
+			$result = $dal->insert_crawler($name, $url);
 			
-			$r = $this->wpdb->get_results ( $query );
 		}
 		
 		

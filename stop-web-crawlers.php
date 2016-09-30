@@ -43,12 +43,13 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 				self::$instance = new Stop_Web_Crawlers ();
 				self::$instance->constants ();
 				self::$instance->includes ();
-				self::$instance->checkVersion();
+				//self::$instance->checkVersion();
 				
 				
 				add_action ( 'admin_menu', 'swc_create_menu' );
 				add_action ( 'parse_request', array ( 'Request_Parser', 'execute' ));
 				add_filter ( 'plugin_action_links', array(self::$instance, 'action_links'), 10, 2);
+				add_action( 'admin_init', 'checkversion' );
 				
 				add_action('admin_enqueue_scripts', 'swc_enqueue_resources_admin');
 				
@@ -89,12 +90,12 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 			require dirname ( __FILE__ ) . '/includes/swc-core/class-swc-request-parser.php';
 			require dirname ( __FILE__ ) . '/includes/swc-db-upgrade/DatabaseUpdate.php';
 			require dirname ( __FILE__ ) . '/includes/swc-core/class-swc-validator.php';
-			require dirname ( __FILE__ ) . '/includes/swc-core/class-swc-DAL.php';
+			require dirname ( __FILE__ ) . '/includes/swc-core/class-swc-data-access-layer.php';
 			require dirname ( __FILE__ ) . '/includes/swc-core/class-swc-servervariables.php';
 			require dirname ( __FILE__ ) . '/includes/swc-core/class-swc-download.php';
 			require dirname ( __FILE__ ) . '/includes/swc-core/class-swc-dbcreate.php';
 		}
-		private function checkVersion()
+		private function checkversion()
 		{
 			//Get Current version
 			$installed_version = get_site_option('SWC_VERSION');
@@ -102,12 +103,12 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 				add_site_option('SWC_VERSION', SWC_VERSION);	
 			}
 
-			/*if(version_compare($installed_version, SWC_VERSION, '<')){
+			if(version_compare($installed_version, SWC_VERSION, '<')){
 					$du = new DatabaseUpdate($installed_version, SWC_VERSION);
   					$du->upgrade();	
   				    update_site_option('SWC_VERSION', SWC_VERSION);
 			}
-			*/
+			
 			
 
 		}
