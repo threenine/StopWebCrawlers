@@ -47,7 +47,6 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 				
 				
 				add_action ( 'admin_menu', 'swc_create_menu' );
-				add_action ( 'plugins_loaded', 'swc_plugin_db_update' );
 				add_action ( 'parse_request', array ( 'Request_Parser', 'execute' ));
 				add_filter ( 'plugin_action_links', array(self::$instance, 'action_links'), 10, 2);
 				
@@ -103,11 +102,12 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 				add_site_option('SWC_VERSION', SWC_VERSION);	
 			}
 
-			if(version_compare($installed_version, SWC_VERSION, '<')){
+			/*if(version_compare($installed_version, SWC_VERSION, '<')){
 					$du = new DatabaseUpdate($installed_version, SWC_VERSION);
   					$du->upgrade();	
   				    update_site_option('SWC_VERSION', SWC_VERSION);
 			}
+			*/
 			
 
 		}
@@ -120,17 +120,7 @@ if (! class_exists ( 'Stop_Web_Crawlers' )) {
 			return $links;
 		}
 		
-		private function SetOptions(){
-			$activate_options = array
-			(
-					'subdomains'=> 'on',
-					'url'=> 'http://google.com',
-					'domains'=> '',
-					'last_update_time'=> '',
-					'blocked_count'=> 0,
-					'send_stats' => 'on'
-			);
-		}
+		
  
 	}
 }

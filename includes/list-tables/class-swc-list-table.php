@@ -184,7 +184,7 @@ class swc_List_Table extends WP_List_Table {
 
 							$my_search = sanitize_text_field($_GET['s']);
 
-							$searchSql = "SELECT $crawlers_table.name as name, $crawlers_table.url as url, $crawlers_type_table.name as type, $crawlers_table.status as status   
+							$searchSql = "SELECT $crawlers_table.id as id, $crawlers_table.name as name, $crawlers_table.url as url, $crawlers_type_table.name as type, $crawlers_table.status as status   
 							FROM $crawlers_table
 							inner join $crawlers_type_table on $crawlers_type_table.id = $crawlers_table.typeid WHERE
 									`name` LIKE  '%". $my_search . "%'
@@ -196,7 +196,7 @@ class swc_List_Table extends WP_List_Table {
 						}
 						else {
 							
-							$sql = "SELECT $crawlers_table.name as name, $crawlers_table.url as url, $crawlers_type_table.name as type, $crawlers_table.status as status   
+							$sql = "SELECT $crawlers_table.id as id, $crawlers_table.name as name, $crawlers_table.url as url, $crawlers_type_table.name as type, $crawlers_table.status as status   
 							FROM $crawlers_table
 							inner join $crawlers_type_table on $crawlers_type_table.id = $crawlers_table.typeid
 							order by ". $orderby ." " .$order;

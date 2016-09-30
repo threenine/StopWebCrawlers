@@ -6,7 +6,6 @@
  *
  * @since      1.3.5
  * @package    StopWebCrawlers
- * @subpackage Plugin_Name/includes
  * @author     threenine.co.uk <support@threenine.co.uk>
  */
 class StopWebCrawlers_Deactivator {
@@ -14,7 +13,7 @@ class StopWebCrawlers_Deactivator {
 	/**
 	 * Uninstall plugin. 
 	 *
-	 * Drop all Plugin tables.
+	 * Any Deactivation tasks.
 	 *
 	 * @since    1.3.5
 	 */

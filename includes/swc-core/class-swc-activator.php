@@ -26,7 +26,7 @@ class StopWebCrawlers_Activator {
 		
 		$dbcreate = new DBCreate();
 		$dbcreate->create();	
-		
+		add_site_option('SWC_VERSION', SWC_VERSION);
 		
 		
 		

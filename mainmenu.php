@@ -33,24 +33,16 @@ function swc_main_page(){
 	include 'views/dashboard.php';
 }
 function swc_add_page() {
-	global $wpdb;
-		
-	$table_name = $wpdb->prefix . "swc_blacklist";
+	
 	
 	if (isset($_POST ['nonce']) && wp_verify_nonce ( $_POST ['nonce'], 'add' )) {
 		
-		$nickname =  sanitize_text_field($_POST ['swc_nickname']);
-		$description = sanitize_text_field($_POST ['swc_description']);
-		$url =  sanitize_text_field($_POST ['swc_url']);
+		$name =  sanitize_text_field($_POST ['swc_name']);
 		
-		$wpdb->insert($table_name, array (
-				'botnickname' =>$nickname,
-				'botname' => $description,
-				'boturl' => $url,
-				'botip' => '',
-				'botobs' => '',
-				'botstate' => 'Enabled' 
-		) );
+		$url =  sanitize_text_field($_POST ['swc_url']);
+		$dal = new DAL();
+		$dal->insert_crawler($name, $url);
+		
 		$message = 'New crawler added successfully!';
 	}
 	include 'views/addnew.php';

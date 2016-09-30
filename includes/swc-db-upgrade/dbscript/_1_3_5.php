@@ -41,6 +41,8 @@ final class _1_3_5 extends updater{
 		$crawlerTable = $this->tablePrefix . $this->SWC_CRAWLERS;
 		$blacklist = $this->tablePrefix . $this->SWC_BLACKLIST;
 		
+		//Check if the blacklist table exists then migrate data
+		if($this->wpdb->get_var("SHOW TABLES LIKE '$blacklist'") == $blacklist) {
 		$refSel = "SELECT id FROM $crawlerType WHERE name='Referer';";
 		$referer =   $this->wpdb->get_var($refSel );
 		
@@ -49,6 +51,7 @@ final class _1_3_5 extends updater{
 				FROM  $blacklist;";
 		
 		dbDelta ( $sql );
+		}
 		
 	}
 	

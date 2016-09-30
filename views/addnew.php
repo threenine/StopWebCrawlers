@@ -6,17 +6,11 @@
 
 			
 				
-				<input type="text" maxlength="30" name="swc_nickname"
+				<input type="text" maxlength="30" name="swc_name"
 					value="" placeholder="name"/>
 					<p><label class="swc-info-label">Enter a name that you would like to use to identify this bot</label></p>
 					<br/>
-		
-			
-				
-				<textarea  name="swc_description"
-					 cols="100" rows="5" placeholder="description" ></textarea>
-					<p><label class="swc-info-label">Enter a description of why you added this crawler.</label></p>
-					<br/>
+	
 				
 				<input type="text" maxlength="255" name="swc_url"
 					value="" placeholder="Url" />
