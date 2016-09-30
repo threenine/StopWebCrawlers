@@ -41,6 +41,18 @@
  		
  		}
  		
+ 		public function insert_crawler($name,$url){
+ 			$crawler_table = $this->tablePrefix . $this->SWC_CRAWLERS;
+ 			
+ 			$this->wpdb->insert($crawler_table, array (
+ 					'name' =>$name,
+ 					'url' => $url,			
+ 					'typeid' => '1',
+ 					'status' => 'Enabled'
+ 			) );
+ 			
+ 		
+ 		}
  		
 	
 }
