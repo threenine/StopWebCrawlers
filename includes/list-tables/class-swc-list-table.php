@@ -1,12 +1,15 @@
 <?php
 
 class swc_List_Table extends WP_List_Table {
-
+	private $SWC_CRAWLERS_LOG = 'swc_crawlers_log';
+	private $SWC_CRAWLERS = 'swc_crawlers';
+	private $SWC_CRAWLER_TYPE = 'swc_crawler_type';
+	
 	public function __construct() {
 		// Set parent defaults.
 		parent::__construct( array(
-				'singular' => 'bot',     // Singular name of the listed records.
-				'plural'   => 'bots',    // Plural name of the listed records.
+				'singular' => 'crawler',     // Singular name of the listed records.
+				'plural'   => 'crawlers',    // Plural name of the listed records.
 				'ajax'     => false,       // Does this table support ajax?
 		) );
 	}
@@ -15,12 +18,10 @@ class swc_List_Table extends WP_List_Table {
 	public function get_columns() {
 		$columns = array(
 				'cb'       => '<input type="checkbox" />', // Render a checkbox instead of text.
-			
-				'botname'   => _x( 'Name', 'Column label', 'badbots' ),
-				'boturl'   => _x(  'URL', 'Column label', 'badbots' ),
-				'botstate' => _x(  'Status', 'Column label', 'badbots' ),
-				
-
+				'name'   => _x( 'Name', 'Column label', 'swc' ),
+				'url'   => _x(  'Url', 'Column label', 'swc' ),
+				'status' => _x(  'Status', 'Column label', 'swc' ),
+				'type' => _x(  'Type', 'Column label', 'swc' )
 		);
 
 		return $columns;
@@ -28,10 +29,10 @@ class swc_List_Table extends WP_List_Table {
 
 	protected function get_sortable_columns() {
 		$sortable_columns = array(
-				'botnickname'    => array( 'botnickname', true ),
-				'botname'   => array( 'botname', true ),
-				'botstate' => array( 'botstate', true ),
-				'boturl' => array( 'boturl', true ),
+				'name'    => array( 'name', true ),
+				'type'   => array( 'type', true ),
+				'status' => array( 'status', true ),
+				'url' => array( 'url', true ),
 		);
 
 		return $sortable_columns;
@@ -39,10 +40,10 @@ class swc_List_Table extends WP_List_Table {
 
 	protected function column_default( $item, $column_name ) {
 		switch ( $column_name ) {
-			case 'botname':
-			case 'botnickname':
-			case 'boturl':
-			case 'botstate':
+			case 'name':
+			case 'type':
+			case 'url':
+			case 'status':
 				return $item[ $column_name ];
 			default:
 				return print_r( $item, true ); // Show the whole array for troubleshooting purposes.
@@ -81,18 +82,18 @@ class swc_List_Table extends WP_List_Table {
 			{
 				$ctd = 0;
 				 
-				foreach($_GET['bot'] as $botid) {
+				foreach($_GET['crawler'] as $crawlerid) {
 
 					$ctd++;
 					$wpdb->show_errors();
 
 					$result =   $wpdb->update (
-							$wpdb->prefix .'swc_blacklist',
+							$wpdb->prefix . $this->SWC_CRAWLERS,
 							array(
-									'botstate' => 'Enabled'
+									'status' => 'Enabled'
 							),
 							array(
-									"id" => $botid
+									"id" => $crawlerid
 							)
 							);
 					 
@@ -114,22 +115,22 @@ class swc_List_Table extends WP_List_Table {
 
 		if ( 'Disable' === $this->current_action() ) {
 
-			if(isset($_GET['bot']))
+			if(isset($_GET['crawler']))
 			{
 				$ctd = 0;
 				 
-				foreach($_GET['bot'] as $botid) {
+				foreach($_GET['crawler'] as $crawlerid) {
 
 					$ctd++;
 					$wpdb->show_errors();
 
 					$result =   $wpdb->update (
-							$wpdb->prefix .'swc_blacklist',
+							$wpdb->prefix . $this->SWC_CRAWLERS,
 							array(
-									'botstate' => 'Disabled'
+									'status' => 'Disabled'
 							),
 							array(
-									"id" => $botid
+									"id" => $crawlerid
 							)
 							);
 					 
@@ -164,7 +165,8 @@ class swc_List_Table extends WP_List_Table {
 		$this->process_bulk_action();
 
 
-		$current_table = $wpdb->prefix .'swc_blacklist';
+		$crawlers_table = $wpdb->prefix .$this->SWC_CRAWLERS;
+		$crawlers_type_table = $wpdb->prefix .$this->SWC_CRAWLER_TYPE;
 
 		if(isset($_GET['order']))
 			$order = $_GET['order'];
@@ -175,20 +177,31 @@ class swc_List_Table extends WP_List_Table {
 				if(isset($_GET['orderby']))
 					$orderby = $_GET['orderby'];
 					else
-						$orderby = 'botnickname';
+						$orderby = $crawlers_table . '.name';
 
 						if( isset($_GET['s']) ){
 
 							$my_search = sanitize_text_field($_GET['s']);
 
-							$results = $wpdb->get_results( "SELECT * FROM $current_table  WHERE
-									`botnickname` LIKE  '%". $my_search . "%'
-             order by ". $orderby ." " .$order);
+							$searchSql = "SELECT $crawlers_table.id as id, $crawlers_table.name as name, $crawlers_table.url as url, $crawlers_type_table.name as type, $crawlers_table.status as status   
+							FROM $crawlers_table
+							inner join $crawlers_type_table on $crawlers_type_table.id = $crawlers_table.typeid WHERE
+									`name` LIKE  '%". $my_search . "%'
+             order by ". $orderby ." " .$order;
+							
+							
+							$results = $wpdb->get_results($searchSql );
 
 						}
 						else {
+							
+							$sql = "SELECT $crawlers_table.id as id, $crawlers_table.name as name, $crawlers_table.url as url, $crawlers_type_table.name as type, $crawlers_table.status as status   
+							FROM $crawlers_table
+							inner join $crawlers_type_table on $crawlers_type_table.id = $crawlers_table.typeid
+							order by ". $orderby ." " .$order;
+							
 
-							$results = $wpdb->get_results( "SELECT * FROM $current_table order by ". $orderby ." " .$order);
+							$results = $wpdb->get_results( $sql);
 
 						}
 
@@ -216,7 +229,7 @@ class swc_List_Table extends WP_List_Table {
 
 	protected function usort_reorder( $a, $b ) {
 		// If no sort, default to title.
-		$orderby = ! empty( $_REQUEST['orderby'] ) ? wp_unslash( $_REQUEST['orderby'] ) : 'botnickname'; // WPCS: Input var ok.
+		$orderby = ! empty( $_REQUEST['orderby'] ) ? wp_unslash( $_REQUEST['orderby'] ) : 'name'; // WPCS: Input var ok.
 
 		// If no order, default to asc.
 		$order = ! empty( $_REQUEST['order'] ) ? wp_unslash( $_REQUEST['order'] ) : 'asc'; // WPCS: Input var ok.
