@@ -4,7 +4,7 @@
 	private $dal;
 	public function __construct(){
 		
-		$this->dal = new DAL();
+		$this->dal = new data_access_layer();
 		
 	}
 	
