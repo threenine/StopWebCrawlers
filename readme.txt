@@ -12,8 +12,7 @@ Tested up to:      4.5.3
 Stable tag:        1.3.4
 
 
-The simplest and easiet way to stop bad web crawlers, bots  and referrer spammers from targeting your wordpress website
-
+Please do not Upgrade to 1.3.5 There are serious issues We are investigating
 
 == Description ==
 
