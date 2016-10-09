@@ -46,7 +46,7 @@ final class _1_3_5 extends updater{
 		$refSel = "SELECT id FROM $crawlerType WHERE name='Referer';";
 		$referer =   $this->wpdb->get_var($refSel );
 		
-		$sql = "INSERT INTO $crawlerTable (name, Url, typeid, status)
+		$sql = "INSERT INTO $crawlerTable (name, url, typeid, status)
 				SELECT botname, boturl, $referer , botstate
 				FROM  $blacklist;";
 		
