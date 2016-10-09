@@ -12,8 +12,7 @@ Tested up to:      4.5.3
 Stable tag:        1.3.4
 
 
-Please do not Upgrade to 1.3.5 There are serious issues We are investigating
-
+Blocks over 1400 known referer spammers from directly targeting your website.
 == Description ==
 
 
