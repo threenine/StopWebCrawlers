@@ -1,15 +1,6 @@
 list
 *.log
-wp-config.php
-wp-content/advanced-cache.php
-wp-content/backup-db/
-wp-content/backups/
-wp-content/blogs.dir/
-wp-content/cache/
-wp-content/upgrade/
-wp-content/uploads/
-wp-content/wp-cache-config.php
-wp-content/plugins/hello.php
+tests
 .DS_Store
 /.htaccess
 /license.txt
@@ -22,7 +13,7 @@ wp-content/plugins/hello.php
 
 .project
 *.settings
-
+phpunit.xml.dist
 
 *.buildpath
 *.settings

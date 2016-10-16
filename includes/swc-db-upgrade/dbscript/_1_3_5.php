@@ -21,6 +21,7 @@ final class _1_3_5 extends updater{
 	
 	
 	public function update(){
+<<<<<<< HEAD
 		require_once plugin_dir_path( __FILE__ ) .  "includes/swc-core/class-swc-dbcreate.php";
 		$dbcreate = new createSwcDatabase();
 		$dbcreate->create();		
@@ -28,5 +29,52 @@ final class _1_3_5 extends updater{
 
 	}
 	
+=======
+		require (SWCPATH . "/includes/swc-core/class-swc-dbcreate.php");
+		$dbcreate = new DBCreate();
+		$dbcreate->create();		
+		$this->MigrateCrawlerData();
+
+	}
+	
+	/**
+	 * Migrate Legacy Crawlers.
+	 *
+	 *  Get all values from legacy blacklist and insert into new list.
+	 *
+	 * @since    1.3.5
+	 */
+	private function MigrateCrawlerData(){
+
+		$crawlerType =  $this->tablePrefix . $this->SWC_CRAWLER_TYPE;
+		$crawlerTable = $this->tablePrefix . $this->SWC_CRAWLERS;
+		$blacklist = $this->tablePrefix . $this->SWC_BLACKLIST;
+		
+		//Check if the blacklist table exists then migrate data
+		if($this->wpdb->get_var("SHOW TABLES LIKE '$blacklist'") == $blacklist) {
+		$refSel = "SELECT id FROM $crawlerType WHERE name='Referer';";
+		$referer =   $this->wpdb->get_var($refSel );
+		
+		$sql = "INSERT INTO $crawlerTable (name, Url, typeid, status)
+				SELECT botname, boturl, $referer , botstate
+				FROM  $blacklist;";
+		
+		dbDelta ( $sql );
+		}
+		
+	}
+	
+	/**
+	 * Drop the old table.
+	 *
+	 *  We have migrated to a new improved schema, we now delete old table.
+	 *
+	 * @since    1.3.5
+	 */
+	private function DropLegacyTable(){
+		
+	}
+
+>>>>>>> svnsync
 } 
 ?>

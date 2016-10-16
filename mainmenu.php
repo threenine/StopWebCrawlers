@@ -40,6 +40,7 @@ function swc_add_page() {
 		$name =  sanitize_text_field($_POST ['swc_name']);
 		
 		$url =  sanitize_text_field($_POST ['swc_url']);
+
 		$dal = new data_access_layer();
 		$dal->insert_crawler($name, $url);
 		
