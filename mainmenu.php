@@ -40,11 +40,8 @@ function swc_add_page() {
 		$name =  sanitize_text_field($_POST ['swc_name']);
 		
 		$url =  sanitize_text_field($_POST ['swc_url']);
-<<<<<<< HEAD
+
 		$dal = new data_access_layer();
-=======
-		$dal = new DAL();
->>>>>>> svnsync
 		$dal->insert_crawler($name, $url);
 		
 		$message = 'New crawler added successfully!';
