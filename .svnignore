@@ -1,26 +1,7 @@
 list
 *.log
-<<<<<<< cf167481d8daa334705803e131eaa772e472dee1
-wp-config.php
-wp-content/advanced-cache.php
-wp-content/backup-db/
-wp-content/backups/
-wp-content/blogs.dir/
-wp-content/cache/
-wp-content/upgrade/
-wp-content/uploads/
-wp-content/wp-cache-config.php
-wp-content/plugins/hello.php
-<<<<<<< 23af2fe3de021b096592550641cffe55b6f7cada
-
-.DS_Store
-
-=======
-=======
 tests
->>>>>>> Updated activation
 .DS_Store
->>>>>>> Update .svnignore
 /.htaccess
 /license.txt
 /readme.html
@@ -34,11 +15,9 @@ tests
 *.settings
 phpunit.xml.dist
 
-
 *.buildpath
 *.settings
 *.project
 *.gitignore
 .thumbs
 
-.thumbs

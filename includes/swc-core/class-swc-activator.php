@@ -23,8 +23,10 @@ class StopWebCrawlers_Activator {
 	public static function activate() {
 
 		// Create the database schema for the  crawlers and loggers tables
+
 		require_once 'class-swc-dbcreate.php';
 		$dbcreate = new createSwcDatabase();
+
 		$dbcreate->create();	
 		add_site_option('SWC_VERSION', SWC_VERSION);
 		
