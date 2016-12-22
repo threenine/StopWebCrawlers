@@ -11,18 +11,11 @@
 <div class="clear"></div> 
 <div class="wrap">
 <div class="swc_left">
+<h4>Stop Web Crawlers is Active</h4>
+<p>There is no further configuration required.</p>
+<p>Your site is now protected against 1400 known bad web crawlers.</p>
 <h4>What's new ?</h4>
-<p>In this release of Stop Web Crawlers we have started work on developing our new database structure to enable
-the delivery of even greater protection from web bots in forthcoming releases.</p>
-<p>At present Stop Web Crawlers only provides protection against Referer spammers, however in later releases
-we will be providing protection against Scrapers, Impersonators and Crackers. All these malicious bots are a threat to your site.</p>
-<p>We had to carry out remedial work on the data structure and also make several improvements to our underlying code base.</p>
-<p>We have also started work to our automated updates feature and developing our online bot repository, which we will be releasing 
-out Minimum Viable Product (MVP) release by end of November.</p>
-<p>We'd like to thank you for your support, and appreciate your continued use of our fledgling product. We would appreciate any comments
-, feedback, criticism, observations, feature requests or bug reports to help us improve.</p>
-
-<p>We anticipate another release of Stop Web Crawlers to be available by the end of October 2016</p>
+<p>This release only has a few minor bug fixes. In preparation for additional planned forthcoming functionality.</p>
 
 <strong>The threenine team</strong>
 
