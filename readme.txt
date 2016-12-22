@@ -9,7 +9,7 @@ Author:            Gary Woodfine
 Donate link:       https://www.paypal.me/geekiam
 Requires at least: 4.5
 Tested up to:      4.5.3
-Stable tag:        1.3.4
+Stable tag:        1.3.6
 
 
 Blocks over 1400 known referer spammers from directly targeting your website.

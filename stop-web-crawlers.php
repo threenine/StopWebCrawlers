@@ -3,11 +3,11 @@
        * Plugin Name: Stop Web Crawlers
        * Plugin URI: https://threenine.co.uk/plugins/stop-web-crawlers/
        * Description: Blocks over 1400 known referer spammers from directly targeting your website.
-       * Version: 1.3.5
+       * Version: 1.3.6
        * Author: Three Nine Consulting
        * Author URI: http://threenine.co.uk
        * License: GPLv2 or later
-       *  Stable tag: 1.3.4
+       *  Stable tag: 1.3.6
        * Copyright 2016 Three Nine Consulting (email : support@threenine.co.uk)
        * This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as
        * published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.

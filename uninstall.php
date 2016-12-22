@@ -1,10 +1,8 @@
 <?php
-
 /**
  * @author Gary Woodfine
  * @copyright 2016
  */
-
 // If uninstall is not called from WordPress, exit
 if ( !defined( 'WP_UNINSTALL_PLUGIN' ) ) {
     exit();
@@ -14,7 +12,6 @@ $option_name = 'stopwebcrawlers';
  
 delete_option( $option_name );
 delete_site_option(SWC_VERSION);
-
  
 // For site options in Multisite
 delete_site_option( $option_name ); 
@@ -22,7 +19,6 @@ delete_site_option( $option_name );
  $SWC_CRAWLERS = 'swc_crawlers';
  $SWC_CRAWLER_TYPE = 'swc_crawler_type';
  $SWC_BLACKLIST = 'swc_blacklist';
-
  
 // Drop a custom db table
 global $wpdb;
@@ -34,7 +30,4 @@ $wpdb->query( "DROP TABLE IF EXISTS $blacklist" );
 $wpdb->query( "DROP TABLE IF EXISTS $log_table" );
 $wpdb->query( "DROP TABLE IF EXISTS $crawlers_table" );
 $wpdb->query( "DROP TABLE IF EXISTS $type_table" );
-
-
-
 ?>

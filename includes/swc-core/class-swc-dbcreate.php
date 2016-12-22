@@ -1,6 +1,5 @@
 <?php
-
-final class createSwcDatabase {
+    final class createSwcDatabase {
 	
 	private $SWC_CRAWLERS_LOG = 'swc_crawlers_log';
 	private $SWC_CRAWLERS = 'swc_crawlers';
