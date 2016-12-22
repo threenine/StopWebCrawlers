@@ -76,9 +76,10 @@ class swc_List_Table extends WP_List_Table {
 	protected function process_bulk_action() {
 		// Detect when a bulk action is being triggered.
 		global $wpdb;
+		$crawlers_table = $wpdb->prefix .$this->SWC_CRAWLERS;
 		if ( 'Enable' === $this->current_action() ) {
 
-			if(isset($_GET['bot']))
+			if(isset($_GET['crawler']))
 			{
 				$ctd = 0;
 				 
@@ -88,7 +89,7 @@ class swc_List_Table extends WP_List_Table {
 					$wpdb->show_errors();
 
 					$result =   $wpdb->update (
-							$wpdb->prefix . $this->SWC_CRAWLERS,
+							$crawlers_table,
 							array(
 									'status' => 'Enabled'
 							),
@@ -125,7 +126,7 @@ class swc_List_Table extends WP_List_Table {
 					$wpdb->show_errors();
 
 					$result =   $wpdb->update (
-							$wpdb->prefix . $this->SWC_CRAWLERS,
+							$crawlers_table,
 							array(
 									'status' => 'Disabled'
 							),
@@ -186,7 +187,7 @@ class swc_List_Table extends WP_List_Table {
 							$searchSql = "SELECT $crawlers_table.id as id, $crawlers_table.name as name, $crawlers_table.url as url, $crawlers_type_table.name as type, $crawlers_table.status as status   
 							FROM $crawlers_table
 							inner join $crawlers_type_table on $crawlers_type_table.id = $crawlers_table.typeid WHERE
-									`name` LIKE  '%". $my_search . "%'
+									$crawlers_table.name LIKE  '%". $my_search . "%'
              order by ". $orderby ." " .$order;
 							
 							
